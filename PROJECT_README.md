@@ -1,0 +1,26 @@
+/PROJECT_README.md
+/docs/
+  brand-system.md
+  design-system.md
+  motion-system.md
+  graphic-system.md
+  component-library.md
+  services-architecture.md
+  industries-architecture.md
+  website-structure.md
+  seo-strategy.md
+  copy-guidelines.md
+  conversion-system.md
+  data-model.md
+  integrations.md
+  accessibility.md
+  performance-budgets.md
+  analytics-measurement.md
+  trust-proof-system.md
+  imagery-licensing.md
+  content-ops.md
+  qa-checklist.md
+/assets/
+  diagrams/
+  photos/
+  icons/
