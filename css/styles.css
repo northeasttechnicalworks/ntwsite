@@ -432,3 +432,10 @@ textarea.form-control { min-height: 120px; resize: vertical; }
         padding: 32px 24px;
     }
 }
+
+/* Footer Parallax Physics Overlay */
+.footer {
+    position: relative;
+    z-index: 100;
+    background: #070D1E;
+}

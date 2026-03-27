@@ -155,7 +155,7 @@ contact_body = '''
             <div class="info-grid" style="margin-top: 48px; margin-bottom: 48px; display: grid; grid-template-columns: 1fr; gap: 40px;">
                 <div class="info-block">
                     <h4 style="color: var(--c-white); font-size: 18px; margin-bottom: 8px;">Contact Dispatch</h4>
-                    <p style="font-size: 16px; color: var(--c-dark-text-body);">Email: deploy@ne-technical.com<br>Call us: +1 (800) 555-0199</p>
+                    <p style="font-size: 16px; color: var(--c-dark-text-body);">Email: solutions@northeasttechworks.com<br>Call us: (203) 418-1608</p>
                 </div>
             </div>
             <div class="info-benefits">

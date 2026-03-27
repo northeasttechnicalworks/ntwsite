@@ -118,7 +118,7 @@ contact_body = '''
 
             <div style="margin-bottom: 40px;">
                 <h4 style="color: var(--c-white); font-size: 18px; margin-bottom: 8px;">Contact Dispatch</h4>
-                <p style="font-size: 16px; color: var(--c-dark-text-body); line-height: 1.6;">Email: deploy@ne-technical.com<br>Call us: +1 (800) 555-0199</p>
+                <p style="font-size: 16px; color: var(--c-dark-text-body); line-height: 1.6;">Email: solutions@northeasttechworks.com<br>Call us: (203) 418-1608</p>
             </div>
             
             <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 32px;">

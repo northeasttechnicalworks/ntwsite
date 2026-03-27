@@ -36,8 +36,8 @@ const footerBlockRoot = `    <footer class="footer">
                     <p style="font-size: var(--fs-1); margin-bottom: var(--s-4); max-width: 300px; color: var(--c-text-1);">The Northeast corridor's most disciplined infrastructure deployment team. Delivering inspection-ready execution across NY, NJ, and CT.</p>
                     <div style="margin-bottom: var(--s-4);">
                         <strong style="color: #fff; display: block; margin-bottom: var(--s-1);">Contact Dispatch</strong>
-                        <a href="tel:+18005550199" style="color: var(--c-accent-1); display: block;">+1 (800) 555-0199</a>
-                        <a href="mailto:deploy@ne-technical.com" style="color: var(--c-accent-1); display: block;">deploy@ne-technical.com</a>
+                        <a href="tel:2034181608" style="color: var(--c-accent-1); display: block;">(203) 418-1608</a>
+                        <a href="mailto:solutions@northeasttechworks.com" style="color: var(--c-accent-1); display: block;">solutions@northeasttechworks.com</a>
                     </div>
                 </div>
                 <div class="footer-col">
