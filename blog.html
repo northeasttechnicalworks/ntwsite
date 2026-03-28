@@ -7,31 +7,32 @@
     <link rel="stylesheet" href="/css/styles.css">
     <style>
         :root {
-            --blog-bg: #070D1E;
-            --blog-surface: #0b1226;
-            --blog-border: rgba(255,255,255,0.08);
-            --blog-gold: #ceab60;
-            --blog-text-muted: #94a3b8;
+            --blog-bg: #F5F5F3;
+            --blog-surface: #FFFFFF;
+            --blog-border: rgba(0,0,0,0.08);
+            --blog-gold: #8E7A50;
+            --blog-text: #111111;
+            --blog-text-muted: #555555;
         }
         
-        body { background: var(--blog-bg); color: #fff; line-height: 1.6; }
+        body { background: var(--blog-bg); color: var(--blog-text); line-height: 1.8; font-family: var(--font-body); }
         
         .blog-hero {
             padding: 180px 0 100px;
             position: relative;
-            background: linear-gradient(180deg, var(--c-bg-dark) 0%, var(--blog-bg) 100%);
+            background: #FFFFFF;
             border-bottom: 1px solid var(--blog-border);
         }
 
         .blog-hero .microtext {
-            color: var(--blog-gold);
+            color: var(--blog-text);
             font-size: 13px;
             letter-spacing: 2px;
             text-transform: uppercase;
-            font-weight: 700;
+            font-weight: 800;
             margin-top: 32px;
             display: inline-block;
-            border-top: 1px solid var(--blog-gold);
+            border-top: 2px solid var(--blog-gold);
             padding-top: 12px;
         }
 
@@ -49,7 +50,8 @@
         
         .featured-card {
             display: block;
-            color: #fff;
+            color: var(--blog-text);
+            text-decoration: none;
         }
         
         .featured-img-wrap {
@@ -76,8 +78,8 @@
         .category-tag {
             font-family: var(--font-body);
             font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 2px;
+            font-weight: 800;
+            letter-spacing: 2.5px;
             text-transform: uppercase;
             color: var(--blog-gold);
             margin-bottom: 16px;
@@ -86,10 +88,13 @@
         
         .featured-title {
             font-family: var(--font-heading);
-            font-size: 40px;
+            font-size: 44px;
+            font-weight: 800;
+            color: var(--blog-text);
             line-height: 1.1;
             margin-bottom: 20px;
             transition: color 0.3s ease;
+            letter-spacing: -1.5px;
         }
         
         .featured-card:hover .featured-title {
@@ -105,7 +110,7 @@
         /* Article Grid */
         .article-grid-section {
             padding: 120px 0;
-            background: #020617;
+            background: var(--blog-bg);
         }
         
         .grid-4 {
@@ -117,33 +122,59 @@
         .article-card {
             background: var(--blog-surface);
             border: 1px solid var(--blog-border);
-            border-radius: 8px;
-            padding: 40px;
+            border-radius: 6px;
+            padding: 0;
             display: flex;
             flex-direction: column;
             transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
             text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            overflow: hidden;
+            height: 100%;
         }
         
         .article-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-            border-color: rgba(255,255,255,0.15);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: var(--blog-gold);
+        }
+
+        .article-card-img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            filter: grayscale(15%) contrast(1.05);
+            border-bottom: 1px solid var(--blog-border);
+            transition: filter 0.4s ease, transform 0.8s ease;
+        }
+
+        .article-card:hover .article-card-img {
+            filter: grayscale(0%) contrast(1.1);
+            transform: scale(1.03);
+        }
+
+        .article-card-content {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
         }
         
-        .article-card .category-tag {
-            color: #fff;
-            opacity: 0.6;
+        .article-card-content .category-tag {
+            color: var(--blog-gold);
+            opacity: 1;
             margin-bottom: 24px;
         }
         
         .article-card-title {
             font-family: var(--font-heading);
-            font-size: 28px;
-            color: #fff;
-            line-height: 1.2;
-            margin-bottom: 20px;
+            font-size: 30px;
+            font-weight: 800;
+            color: var(--blog-text);
+            line-height: 1.25;
+            margin-bottom: 24px;
             transition: color 0.3s;
+            letter-spacing: -0.5px;
         }
         
         .article-card:hover .article-card-title {
@@ -232,75 +263,241 @@
                 <li><a href="/about.html">About</a></li>
                 <li><a href="/blog.html">Blog</a></li>
             </ul>
-            <a href="/contact.html" class="btn btn-dark">Contact Us</a>
+            <a href="/contact.html" class="btn btn-dark">Start Your Deployment</a>
         </div>
     </header>
 
-    <!-- 3. Article Grid -->
-    <section class="article-grid-section">
-        <div class="container">
-            <h3 style="font-family: var(--font-heading); font-size: 24px; text-transform: uppercase; letter-spacing: 4px; color: #fff; margin-bottom: 60px; border-bottom: 1px solid var(--blog-border); padding-bottom: 24px;">Standard Dispatches</h3>
-            
-            <div class="grid-4">
-                
-                <a href="/blog/access-control-deployments.html" class="article-card">
-                    <span class="category-tag">Access Control</span>
-                    <h3 class="article-card-title">Access Control Systems: What Actually Matters in Real-World Deployments</h3>
-                    <p class="article-card-excerpt">Hardware selection means nothing if door integration fails. A look into common barrier hardware mistakes, fire-code compliance considerations, and OSDP perimeter mapping.</p>
-                    <div class="read-cta">
-                        Read Article <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                    </div>
-                </a>
-
-                <a href="/blog/conduit-vs-open-cabling.html" class="article-card">
-                    <span class="category-tag">Cabling</span>
-                    <h3 class="article-card-title">Conduit vs Open Cabling: When Each Approach Makes Sense</h3>
-                    <p class="article-card-excerpt">Navigating mechanical pathways. We analyze code requirements, cost tradeoffs, physical durability, and execution strategies for warehouse versus commercial office environments.</p>
-                    <div class="read-cta">
-                        Read Article <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                    </div>
-                </a>
-
-                <a href="/blog/multi-site-rollouts.html" class="article-card">
-                    <span class="category-tag">Operations</span>
-                    <h3 class="article-card-title">How Multi-Site Rollouts Fail — And How to Execute Them Properly</h3>
-                    <p class="article-card-excerpt">National deployments collapse due to execution variance. Learn the zero-variance synchronization methods required to standard-deploy identical physical stacks across hundreds of regional environments.</p>
-                    <div class="read-cta">
-                        Read Article <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                    </div>
-                </a>
-
-                <a href="/blog/preventive-maintenance-cost.html" class="article-card">
-                    <span class="category-tag">Operations</span>
-                    <h3 class="article-card-title">Preventive Infrastructure Maintenance vs Emergency Repairs: A Cost Breakdown</h3>
-                    <p class="article-card-excerpt">An objective contrast between rigid, scheduled physical-layer diagnostics and the devastating financial reality of emergency downtime repairs. Uptime is a consequence of preparation.</p>
-                    <div class="read-cta">
-                        Read Article <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                    </div>
-                </a>
-
+    <!-- 3. Blog Hero -->
+    <section class="blog-hero" style="background: #020617; position: relative; padding: 160px 0; overflow: hidden;">
+        <div style="position: absolute; inset: 0; background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc4b?auto=format&fit=crop&w=1600&q=80'); background-size: cover; background-position: center; opacity: 0.3; filter: grayscale(100%);"></div>
+        <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(2,6,23,0.8), rgba(2,6,23,0.95));"></div>
+        
+        <div class="container" style="position: relative; z-index: 2; text-align: center;">
+            <div style="max-width: 900px; margin: 0 auto;">
+                <div class="sec-tag" style="border-color: rgba(255,255,255,0.2); color: #fff; margin: 0 auto 32px; justify-content: center;">Field Intelligence</div>
+                <h1 style="font-family: var(--font-heading); font-size: 64px; font-weight: 900; line-height: 1.1; margin-bottom: 24px; letter-spacing: -3px; color: #fff;">Infrastructure Insights</h1>
+                <p style="font-size: 24px; color: #94a3b8; line-height: 1.6; font-weight: 500;">Field intelligence, technical breakdowns, and real-world lessons from infrastructure deployments.</p>
             </div>
         </div>
     </section>
 
-    <!-- 4. CTA Section -->
-    <section class="blog-cta">
+    <!-- 4. Featured Intelligence Section -->
+    <section class="section" style="background: #fff; padding: 120px 0; border-bottom: 1px solid #e2e8f0;">
         <div class="container">
-            <div style="max-width: 700px; margin: 0 auto;">
-                <h2 style="font-family: var(--font-heading); font-size: 48px; color: #fff; margin-bottom: 24px;">Plan Your Next Deployment</h2>
-                <p style="font-size: 18px; color: var(--blog-text-muted); line-height: 1.6; margin-bottom: 40px;">Apply these insights to your infrastructure. Work with a team that executes strictly to standard.</p>
-                <a href="mailto:solutions@northeasttechworks.com" class="btn" style="background: var(--blog-gold); color: #000; padding: 18px 40px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 14px; text-decoration: none; display: inline-block;">Request Deployment</a>
+            <h3 style="font-family: var(--font-heading); font-size: 14px; text-transform: uppercase; letter-spacing: 4px; color: var(--blog-gold); margin-bottom: 40px; display: block;">Featured Intelligence</h3>
+            
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 48px;">
+                <a href="/blog/access-control-deployments.html" style="text-decoration: none; display: block;" onmouseover="this.querySelector('img').style.transform='scale(1.05)'" onmouseout="this.querySelector('img').style.transform='scale(1)'">
+                    <div style="height: 400px; overflow: hidden; border-radius: 4px; border: 1px solid var(--blog-border); margin-bottom: 32px; position: relative; background: #eee;">
+                        <img src="images/blog/thumb_security.png" alt="Access Control Systems" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);">
+                        <div style="position: absolute; top: 20px; left: 20px; background: #fff; padding: 6px 14px; font-size: 11px; font-weight: 900; letter-spacing: 2.5px; text-transform: uppercase; color: #111; border: 1px solid #e2e8f0;">Protocol</div>
+                    </div>
+                    <h3 style="font-family: var(--font-heading); font-size: 36px; font-weight: 900; color: #111111; line-height: 1.1; margin-bottom: 16px; letter-spacing: -1.5px;">Access Control Systems: What Actually Matters in Real-World Deployments</h3>
+                    <p style="color: #555555; font-size: 20px; line-height: 1.6; font-weight: 500;">Hardware selection means nothing if door integration fails. A technical autopsy of common physical security deployment errors.</p>
+                </a>
+                
+                <a href="/blog/conduit-vs-open-cabling.html" style="text-decoration: none; display: block;" onmouseover="this.querySelector('img').style.transform='scale(1.05)'" onmouseout="this.querySelector('img').style.transform='scale(1)'">
+                    <div style="height: 410px; overflow: hidden; border-radius: 4px; border: 1px solid var(--blog-border); margin-bottom: 32px; position: relative; background: #eee;">
+                        <img src="images/blog/conduit.png" alt="Cabling Architectures" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);">
+                        <div style="position: absolute; top: 20px; left: 20px; background: #fff; padding: 6px 14px; font-size: 11px; font-weight: 900; letter-spacing: 2.5px; text-transform: uppercase; color: #111; border: 1px solid #e2e8f0;">Efficiency</div>
+                    </div>
+                    <h3 style="font-family: var(--font-heading); font-size: 36px; font-weight: 900; color: #111111; line-height: 1.1; margin-bottom: 16px; letter-spacing: -1.5px;">Conduit vs Open Cabling: When Each Approach Makes Sense</h3>
+                    <p style="color: #555555; font-size: 20px; line-height: 1.6; font-weight: 500;">We analyze the physics, code requirements, and long-term durability of diverse pathway deployment strategies.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Article Grid Section -->
+    <section class="article-grid-section" style="background: #F5F5F3; padding: 120px 0;">
+        <div class="container">
+            <h3 style="font-family: var(--font-heading); font-size: 14px; text-transform: uppercase; letter-spacing: 4px; color: #111111; margin-bottom: 60px; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 24px;">Field Archives</h3>
+            
+            <div class="grid-4">
+                
+                <a href="/blog/access-control-deployments.html" class="article-card">
+                    <img src="images/blog/thumb_security.png" class="article-card-img" alt="Access Control Systems">
+                    <div class="article-card-content">
+                        <span class="category-tag">Access Control</span>
+                        <h3 class="article-card-title">Access Control Systems: What Actually Matters in Real-World Deployments</h3>
+                        <p class="article-card-excerpt">Hardware selection means nothing if door integration fails. A look into common barrier hardware mistakes, fire-code compliance considerations, and OSDP perimeter mapping.</p>
+                        <div class="read-cta">
+                            Read Article <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/conduit-vs-open-cabling.html" class="article-card">
+                    <img src="images/blog/conduit.png" class="article-card-img" alt="Cabling Pathways">
+                    <div class="article-card-content">
+                        <span class="category-tag">Cabling</span>
+                        <h3 class="article-card-title">Conduit vs Open Cabling: When Each Approach Makes Sense</h3>
+                        <p class="article-card-excerpt">Navigating mechanical pathways. We analyze code requirements, cost tradeoffs, physical durability, and execution strategies for warehouse versus commercial office environments.</p>
+                        <div class="read-cta">
+                            Read Article <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/multi-site-rollouts.html" class="article-card">
+                    <img src="images/blog/thumb_operations.png" class="article-card-img" alt="Multi-Site Rollout Strategy">
+                    <div class="article-card-content">
+                        <span class="category-tag">Operations</span>
+                        <h3 class="article-card-title">How Multi-Site Rollouts Fail — And How to Execute Them Properly</h3>
+                        <p class="article-card-excerpt">National deployments collapse due to execution variance. Learn the zero-variance synchronization methods required to standard-deploy identical physical stacks across hundreds of regional environments.</p>
+                        <div class="read-cta">
+                            Read Article <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/preventive-maintenance-cost.html" class="article-card">
+                    <img src="images/blog/maintenance.png" class="article-card-img" alt="Infrastructure Maintenance">
+                    <div class="article-card-content">
+                        <span class="category-tag">Operations</span>
+                        <h3 class="article-card-title">Preventive Infrastructure Maintenance vs Emergency Repairs: A Cost Breakdown</h3>
+                        <p class="article-card-excerpt">An objective contrast between rigid, scheduled physical-layer diagnostics and the devastating financial reality of emergency downtime repairs. Uptime is a consequence of preparation.</p>
+                        <div class="read-cta">
+                            Read Article <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/zero-downtime-mdf-cutover.html" class="article-card">
+                    <img src="images/blog/cutover.png" class="article-card-img" alt="MDF Cutover">
+                    <div class="article-card-content">
+                        <span class="category-tag">Infrastructure</span>
+                        <h3 class="article-card-title">Executing a Zero-Downtime MDF Cutover for a 12-Story Manhattan Tower</h3>
+                        <p class="article-card-excerpt">We unpack the rigorous logistics, contingency pathways, and off-hour execution matrix required to upgrade a core switching environment traversing tenanted floors without disrupting live trading operations.</p>
+                        <div class="read-cta">
+                            Read Article <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/osdp-standardization.html" class="article-card">
+                    <img src="images/blog/osdp.png" class="article-card-img" alt="OSDP Protocols">
+                    <div class="article-card-content">
+                        <span class="category-tag">Protocol</span>
+                        <h3 class="article-card-title">Why OSDP is Now Mandatory for Real Estate Access Deployments</h3>
+                        <p class="article-card-excerpt">Legacy Wiegand wiring leaves commercial real estate critically vulnerable. Here is why we mandate Open Supervised Device Protocol (OSDP) across all new tenant security and perimeter barrier rollouts.</p>
+                        <div class="read-cta">
+                            Read Article <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/certifying-fluke-networks.html" class="article-card">
+                    <img src="images/blog/fluke.png" class="article-card-img" alt="Fluke Network Testing">
+                    <div class="article-card-content">
+                        <span class="category-tag">Standard</span>
+                        <h3 class="article-card-title">The Cost of Uncertified Drops: Why We Fluke-Test Every Run</h3>
+                        <p class="article-card-excerpt">Cabling isn't just copper; it's the physics handling your throughput. We explain our rigid testing standards, cross-talk mitigation, and why uncertified field work destroys long-term IT scalability.</p>
+                        <div class="read-cta">
+                            Read Article <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/warehouse-surveillance-deployment.html" class="article-card">
+                    <img src="images/blog/warehouse.png" class="article-card-img" alt="Warehouse Surveillance">
+                    <div class="article-card-content">
+                        <span class="category-tag">Surveillance</span>
+                        <h3 class="article-card-title">Warehouse Surveillance Deployment for a Regional Distribution Center</h3>
+                        <p class="article-card-excerpt">Multi-camera installation with structured cabling and exterior routing for a 250,000 sq. ft. regional distribution center.</p>
+                        <div class="read-cta">
+                            Read Article <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/office-infrastructure-buildout.html" class="article-card">
+                    <img src="images/blog/office.png" class="article-card-img" alt="Office Infrastructure">
+                    <div class="article-card-content">
+                        <span class="category-tag">Infrastructure</span>
+                        <h3 class="article-card-title">Office Infrastructure Buildout for a Commercial Tenant Space</h3>
+                        <p class="article-card-excerpt">Core MDF rack build, switching integration, and cable management overhaul for a 50,000 sq. ft. commercial tenant space.</p>
+                        <div class="read-cta">
+                            Read Article <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/multi-site-cabling-rollout.html" class="article-card">
+                    <img src="images/blog/retail.png" class="article-card-img" alt="Multi-Site Cabling">
+                    <div class="article-card-content">
+                        <span class="category-tag">Operations</span>
+                        <h3 class="article-card-title">Multi-Site Cabling Rollout for a Regional Retail Chain</h3>
+                        <p class="article-card-excerpt">Standardized infrastructure stack and backbone integration across 12 regional retail locations in the Northeast corridor.</p>
+                        <div class="read-cta">
+                            Read Article <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/access-control-installation.html" class="article-card">
+                    <img src="images/blog/logic_panel.png" class="article-card-img" alt="Access Control Hardware">
+                    <div class="article-card-content">
+                        <span class="category-tag">Access Control</span>
+                        <h3 class="article-card-title">Access Control Installation for a Secured Commercial Facility</h3>
+                        <p class="article-card-excerpt">OSDP reader deployment and electrified door hardware integration for a 20-portal secured commercial facility.</p>
+                        <div class="read-cta">
+                            Read Article <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="/blog/cable-management-costs.html" class="article-card">
+                    <img src="images/blog/cable_mgmt.png" class="article-card-img" alt="Cable Management">
+                    <div class="article-card-content">
+                        <span class="category-tag">Standard</span>
+                        <h3 class="article-card-title">The Real Cost of Poor Cable Management in Commercial Environments</h3>
+                        <p class="article-card-excerpt">A look into how unmanaged physical layers lead to cooling failures, tracing latency, and increased MTTR during outages.</p>
+                        <div class="read-cta">
+                            Read Article <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/surveillance-failure-rates.html" class="article-card">
+                    <img src="images/blog/thumb_cabling.png" class="article-card-img" alt="Surveillance Tech">
+                    <div class="article-card-content">
+                        <span class="category-tag">Surveillance</span>
+                        <h3 class="article-card-title">Surveillance Failure Rates: Why Cheap Cameras Cost More Long-Term</h3>
+                        <p class="article-card-excerpt">Analyzing MTBF (Mean Time Between Failures) in commercial-grade versus consumer-grade surveillance hardware.</p>
+                        <div class="read-cta">
+                            Read Article <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </div>
+                    </div>
+                </a>
+
             </div>
         </div>
     </section>
 
     <script src="/js/main.js"></script>
+
+    <!-- Final Blog CTA -->
+    <section class="section" style="background: #fff; padding: 120px 0; border-top: 1px solid #e2e8f0;">
+        <div class="container" style="text-align: center;">
+            <div style="max-width: 800px; margin: 0 auto;">
+                <h2 style="font-family: var(--font-heading); font-size: 48px; color: #0f172a; line-height: 1.1; margin-bottom: 24px; letter-spacing: -1.5px;">Turn Insight Into Execution</h2>
+                <p style="color: #475569; font-size: 20px; margin-bottom: 48px; line-height: 1.6;">Apply these principles with a team that delivers infrastructure to standard.</p>
+                <div style="display: flex; flex-direction: column; align-items: center; gap: 24px;">
+                    <a href="/contact.html" class="btn btn-dark" style="padding: 20px 48px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px;">Request Deployment</a>
+                    <a href="mailto:solutions@northeasttechworks.com" style="color: #0f172a; font-weight: 700; text-decoration: none; font-size: 16px;">solutions@northeasttechworks.com</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer class="footer" style="background: #020617; padding: 100px 0 40px; border-top: 1px solid #1e293b;">
         <div class="container">
             <div class="footer-top">
                 <div style="max-width: 400px;">
                     <span style="font-family: var(--font-heading); font-weight: 800; color: #fff; font-size: 28px; display: block; margin-bottom: 16px; letter-spacing: -1px;">NTW</span>
-                    <p style="font-size: 16px; color: #94a3b8; line-height: 1.7; margin-bottom: 32px;">The Northeast corridor's most disciplined infrastructure deployment team. Delivering inspection-ready execution across NY, NJ, and CT.</p>
+                    <p style="font-size: 16px; color: #94a3b8; line-height: 1.7; margin-bottom: 24px;">The Northeast corridor's most disciplined infrastructure deployment team. Delivering inspection-ready execution across NY, NJ, and CT.</p>
+                    <p style="font-size: 14px; color: #64748b; font-style: italic; margin-bottom: 32px;">Northeast Technical Works is built for environments where failure is not tolerated.</p>
                     <div>
                         <strong style="color: #fff; display: block; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px;">Dispatch Line</strong>
                         <a href="tel:2034181608" style="color: #fff; font-size: 20px; font-weight: 600; text-decoration: none; display: block; margin-bottom: 4px; transition: color 0.2s;" onmouseover="this.style.color='var(--c-accent)'" onmouseout="this.style.color='#fff'">(203) 418-1608</a>

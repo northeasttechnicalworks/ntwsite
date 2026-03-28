@@ -3,30 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conduit vs Open Cabling: When Each Approach Makes Sense | NTW Insights</title>
-    <meta name="description" content="Navigating mechanical pathways and commercial wiring methods. Analyze code requirements, physical durability, cost tradeoffs, and execution strategies.">
+    <title>Conduit vs Open Cabling: When Each Approach Makes Sense | Infrastructure Insights</title>
     <link rel="stylesheet" href="/css/styles.css">
-    <style>
+        <style>
         :root {
-            --blog-bg: #070D1E;
-            --blog-border: rgba(255,255,255,0.08);
-            --blog-gold: #ceab60;
-            --blog-text-muted: #94a3b8;
+            --blog-bg: #F5F5F3;
+            --blog-border: rgba(0,0,0,0.08);
+            --blog-gold: #8E7A50;
+            --blog-text: #111111;
+            --blog-text-muted: #555555;
         }
         
-        body { background: var(--blog-bg); color: #fff; line-height: 1.8; font-family: var(--font-body); }
+        body { background: var(--blog-bg); color: var(--blog-text); line-height: 1.8; font-family: var(--font-body); }
         
         .article-hero {
-            padding: 160px 0 80px;
-            background: linear-gradient(180deg, var(--c-bg-dark) 0%, var(--blog-bg) 100%);
+            padding: 0;
+            background: #f8f9fa;
             border-bottom: 1px solid var(--blog-border);
+            text-align: center;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            filter: grayscale(10%) contrast(1.1);
+            display: block;
+        }
+
+        .hero-text-wrap {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 40px 60px;
         }
 
         .category-tag {
             color: var(--blog-gold);
             font-size: 13px;
-            font-weight: 800;
-            letter-spacing: 2px;
+            font-weight: 900;
+            letter-spacing: 4px;
             text-transform: uppercase;
             margin-bottom: 24px;
             display: inline-block;
@@ -35,83 +50,80 @@
         .article-title {
             font-family: var(--font-heading);
             font-size: 56px;
+            font-weight: 900;
             line-height: 1.1;
-            margin-bottom: 32px;
-            letter-spacing: -1px;
+            margin-bottom: 24px;
+            letter-spacing: -2px;
+            color: var(--blog-text);
         }
 
         .article-meta {
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 24px;
             color: var(--blog-text-muted);
             font-size: 14px;
-            font-weight: 600;
+            font-weight: 700;
             border-top: 1px solid var(--blog-border);
-            padding-top: 24px;
-            margin-top: 40px;
+            padding-top: 20px;
+            margin-top: 32px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .article-body {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 80px 24px;
-            font-size: 18px;
-            color: #cbd5e1;
+            padding: 80px 80px;
+            font-size: 20px;
+            color: #333333;
+            line-height: 1.8;
+            background: #FFFFFF;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.02);
+            margin-top: -40px;
+            position: relative;
+            z-index: 10;
+            border-radius: 4px;
+            margin-bottom: 120px;
         }
 
         .article-body h2 {
             font-family: var(--font-heading);
-            font-size: 32px;
-            color: #fff;
+            font-size: 36px;
+            font-weight: 900;
+            color: var(--blog-text);
             margin: 64px 0 24px;
-            line-height: 1.3;
+            line-height: 1.2;
+            letter-spacing: -1px;
         }
 
-        .article-body p {
-            margin-bottom: 24px;
+        .article-body h3 {
+            font-family: var(--font-heading);
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--blog-text);
+            margin: 40px 0 20px;
         }
 
-        .article-body strong {
-            color: #fff;
-        }
+        .article-body p { margin-bottom: 24px; }
+        .article-body strong { color: #000; font-weight: 800; }
 
         .article-img {
             width: 100%;
             height: auto;
-            border-radius: 8px;
-            margin: 48px 0;
-            border: 1px solid var(--blog-border);
-            filter: grayscale(20%);
+            border-radius: 4px;
+            margin: 40px 0;
         }
 
-        .author-box {
-            margin-top: 80px;
-            padding: 40px;
-            background: #0b1226;
-            border: 1px solid var(--blog-border);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            gap: 24px;
-        }
-
-        .author-info h4 {
-            font-size: 20px;
-            color: #fff;
-            margin-bottom: 8px;
-        }
-
-        .author-info p {
-            font-size: 15px;
-            color: var(--blog-text-muted);
-            margin: 0;
+        @media (max-width: 1024px) {
+            .article-body { width: 95%; padding: 60px 40px; margin-left: auto; margin-right: auto; }
         }
 
         @media (max-width: 768px) {
-            .article-title { font-size: 40px; }
-            .article-hero { padding: 120px 0 60px; }
-            .article-body { font-size: 16px; padding: 40px 24px; }
+            .article-title { font-size: 38px; }
+            .hero-image { height: 300px; }
+            .article-body { padding: 40px 20px; font-size: 18px; }
         }
     </style>
 </head>
@@ -157,9 +169,14 @@
         </div>
     </header>
 
-    <section class="article-hero">
+        <section class="article-hero">
+        <img src="/images/blog/conduit.png" class="hero-image" alt="Conduit vs Open Cabling: When Each Approach Makes Sense">
         <div class="container">
-            <div style="max-width: 900px; margin: 0 auto;">
+            <div class="hero-text-wrap">
+                <a href="/blog.html" style="color: #111111; text-decoration: none; font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 2.5px; display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 32px;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                    Back to Insights
+                </a>
                 <span class="category-tag">Cabling</span>
                 <h1 class="article-title">Conduit vs Open Cabling: When Each Approach Makes Sense</h1>
                 <div class="article-meta">
@@ -175,48 +192,50 @@
 
     <article class="article-body">
         <p>In the low-voltage commercial wiring sector, the debate between rigid conduit routing and open-air J-hook cabling is a constant friction point between general contractors, IT directors, and field integrators. The ultimate decision fundamentally impacts project execution cost, labor timelines, and the long-term physical durability of the IT infrastructure.</p>
+
+<p>There is no universal correct choice. Instead, the approach must be deliberately mapped to the specific operational environment, local AHJ (Authority Having Jurisdiction) building codes, and future scalability requirements.</p>
+
+<h2>The Argument for Free-Air Cabling</h2>
+
+<p>For standard Class A commercial office spaces, drop-ceiling (plenum) free-air cabling is the execution standard. Using heavy-duty J-hooks suspended dynamically from structural steel or ceiling beams, installers create an invisible suspension highway floating above the acoustic ceiling tiles.</p>
+
+<p>The core advantage here is pure cost efficiency and extreme malleability. When tens of thousands of feet of structured cabling need to reach hundreds of workstation drops, conduit is both financially prohibitive and logistically suffocating. Running plenum-rated CAT6a bundles over open J-hooks allows IT teams to effortlessly add new workstation runs or access point data lines in the future without attempting to snake wires through packed, bending 1-inch EMT pipe.</p>
+
+<p>Providing the drop-ceiling is classified correctly for air-handling (necessitating explicitly rated Teflon CMP plenum jackets to prevent toxic smoke in a fire), open cabling is the fastest, most scalable choice for low-impact IT offices.</p>
+
+<h2>The Mandate for Rigid Conduit</h2>
+
+<p>The moment an environment transitions from a carpeted office to exposed-deck architecture, industrial warehousing, or high-traffic distribution, open cabling becomes an active liability.</p>
+
+<p>Exposed CAT6 bundles hanging along warehouse girders are vulnerable to forklift strikes, dust accumulation, thermal stress near HVAC returns, and electromagnetic interference (EMI) from heavy industrial machinery. In these environments, rigid EMT conduit represents absolute physical containment. Furthermore, local fire and electrical codes in densely populated cities like New York and Chicago frequently mandate conduit for all low-voltage and security wiring passing through non-plenum walls or core structural decks to strictly compartmentalize fire hazards.</p>
+
+<p>We dictate EMT conduit usage primarily for high-density backbone runs (such as tying a third-floor IDF closet down to a basement MDF), for all exterior surveillance runs subjected to weathering, and for all low-voltage lines running parallel to heavy electrical feeders where EMI shielding is critical to data throughput.
         
-        <p>There is no universal correct choice. Instead, the approach must be deliberately mapped to the specific operational environment, local AHJ (Authority Having Jurisdiction) building codes, and future scalability requirements.</p>
+</p>
 
-        <img src="https://images.unsplash.com/photo-1614064641913-6b71a2a47291?auto=format&fit=crop&w=1200&q=80" alt="Extensive Data Cabling and Conduit Trays" class="article-img">
+<h2>Hybrid Execution Frameworks</h2>
 
-        <h2>The Argument for Free-Air Cabling</h2>
+<p>The most competent deployment strategy is a hybrid infrastructure design. This involves building out a primary rigid containment track (such as continuous cable trays or 3-inch EMT sleeves) down the central coring spine of the building, and subsequently exploding that protected bundle into open-air J-hooks once it breaches the localized ceiling space of a specific office suite.</p>
+
+<p>This ensures the most vulnerable core segments of the building network are thoroughly physically protected, while the endpoint distribution remains agile, cost-effective, and highly serviceable for future structural changes.</p>
         
-        <p>For standard Class A commercial office spaces, drop-ceiling (plenum) free-air cabling is the execution standard. Using heavy-duty J-hooks suspended dynamically from structural steel or ceiling beams, installers create an invisible suspension highway floating above the acoustic ceiling tiles.</p>
-
-        <p>The core advantage here is pure cost efficiency and extreme malleability. When tens of thousands of feet of structured cabling need to reach hundreds of workstation drops, conduit is both financially prohibitive and logistically suffocating. Running plenum-rated CAT6a bundles over open J-hooks allows IT teams to effortlessly add new workstation runs or access point data lines in the future without attempting to snake wires through packed, bending 1-inch EMT pipe.</p>
-
-        <p>Providing the drop-ceiling is classified correctly for air-handling (necessitating explicitly rated Teflon CMP plenum jackets to prevent toxic smoke in a fire), open cabling is the fastest, most scalable choice for low-impact IT offices.</p>
-
-        <h2>The Mandate for Rigid Conduit</h2>
-
-        <p>The moment an environment transitions from a carpeted office to exposed-deck architecture, industrial warehousing, or high-traffic distribution, open cabling becomes an active liability.</p>
-
-        <p>Exposed CAT6 bundles hanging along warehouse girders are vulnerable to forklift strikes, dust accumulation, thermal stress near HVAC returns, and electromagnetic interference (EMI) from heavy industrial machinery. In these environments, rigid EMT conduit represents absolute physical containment. Furthermore, local fire and electrical codes in densely populated cities like New York and Chicago frequently mandate conduit for all low-voltage and security wiring passing through non-plenum walls or core structural decks to strictly compartmentalize fire hazards.</p>
-
-        <p>We dictate EMT conduit usage primarily for high-density backbone runs (such as tying a third-floor IDF closet down to a basement MDF), for all exterior surveillance runs subjected to weathering, and for all low-voltage lines running parallel to heavy electrical feeders where EMI shielding is critical to data throughput.</p>
-
-        <h2>Hybrid Execution Frameworks</h2>
-
-        <p>The most competent deployment strategy is a hybrid infrastructure design. This involves building out a primary rigid containment track (such as continuous cable trays or 3-inch EMT sleeves) down the central coring spine of the building, and subsequently exploding that protected bundle into open-air J-hooks once it breaches the localized ceiling space of a specific office suite.</p>
-
-        <p>This ensures the most vulnerable core segments of the building network are thoroughly physically protected, while the endpoint distribution remains agile, cost-effective, and highly serviceable for future structural changes.</p>
-
-        <div class="author-box">
-            <div class="author-info">
-                <h4>NTW Deployment Logistics Command</h4>
-                <p>Northeast Technical Works utilizes deep logistics and structural awareness to engineer cost-effective, code-compliant physical deployment pathways.</p>
+        <div style="margin-top: 100px; padding: 80px 40px; background: #fafafa; border: 1px solid rgba(0,0,0,0.08); text-align: center; border-radius: 4px;">
+            <h3 style="font-family: var(--font-heading); font-size: 40px; color: #111111; margin-bottom: 20px; font-weight: 900; letter-spacing: -1.5px;">Execute With Confidence</h3>
+            <p style="color: #555555; font-size: 20px; margin-bottom: 48px; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.6;">Partner with Northeast Technical Works for disciplined infrastructure deployment.</p>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
+                <a href="/contact.html" class="btn btn-primary" style="background: #111111; color: #fff; padding: 20px 48px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; display: inline-block; text-decoration: none; border-radius: 4px; font-size: 14px;">Request Deployment</a>
+                <a href="mailto:solutions@northeasttechworks.com" style="color: #111111; font-weight: 700; text-decoration: none; font-size: 14px;">solutions@northeasttechworks.com</a>
             </div>
         </div>
     </article>
 
-    <script src="/js/main.js"></script>
     <footer class="footer" style="background: #020617; padding: 100px 0 40px; border-top: 1px solid #1e293b;">
         <div class="container">
             <div class="footer-top">
                 <div style="max-width: 400px;">
                     <span style="font-family: var(--font-heading); font-weight: 800; color: #fff; font-size: 28px; display: block; margin-bottom: 16px; letter-spacing: -1px;">NTW</span>
-                    <p style="font-size: 16px; color: #94a3b8; line-height: 1.7; margin-bottom: 32px;">The Northeast corridor's most disciplined infrastructure deployment team. Delivering inspection-ready execution across NY, NJ, and CT.</p>
+                    <p style="font-size: 16px; color: #94a3b8; line-height: 1.7; margin-bottom: 24px;">The Northeast corridor's most disciplined infrastructure deployment team. Delivering inspection-ready execution across NY, NJ, and CT.</p>
+                    <p style="font-size: 14px; color: #64748b; font-style: italic; margin-bottom: 32px;">Northeast Technical Works is built for environments where failure is not tolerated.</p>
                     <div>
                         <strong style="color: #fff; display: block; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px;">Dispatch Line</strong>
                         <a href="tel:2034181608" style="color: #fff; font-size: 20px; font-weight: 600; text-decoration: none; display: block; margin-bottom: 4px; transition: color 0.2s;" onmouseover="this.style.color='var(--c-accent)'" onmouseout="this.style.color='#fff'">(203) 418-1608</a>
@@ -264,5 +283,6 @@
             </div>
         </div>
     </footer>
+    <script src="/js/main.js"></script>
 </body>
 </html>
