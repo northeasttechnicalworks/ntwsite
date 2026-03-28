@@ -1,9 +1,8 @@
-const fs = require('fs');
-const path = require('path');
+import os
+import re
 
-const rootDir = 'e:/websites/NTW';
-
-const navBlockRoot = `    <!-- 1. Top Bar -->
+root = 'e:/websites/NTW'
+master_header = """    <!-- 1. Top Bar -->
     <div class="top-bar">
         <div class="container flex-between">
             <div class="top-contact">
@@ -42,9 +41,9 @@ const navBlockRoot = `    <!-- 1. Top Bar -->
             </ul>
             <a href="/contact.html" class="btn btn-dark">Contact Us</a>
         </div>
-    </header>`;
+    </header>"""
 
-const footerBlockRoot = `    <footer class="footer" style="background: #020617; padding: 100px 0 40px; border-top: 1px solid #1e293b;">
+master_footer = """    <footer class="footer" style="background: #020617; padding: 100px 0 40px; border-top: 1px solid #1e293b;">
         <div class="container">
             <div class="footer-top">
                 <div style="max-width: 400px;">
@@ -96,57 +95,40 @@ const footerBlockRoot = `    <footer class="footer" style="background: #020617; 
                 </div>
             </div>
         </div>
-    </footer>`;
+    </footer>"""
 
-function processFile(filePath) {
-    let content = fs.readFileSync(filePath, 'utf8');
-    let modified = false;
+def clean_file(path):
+    with open(path, 'r', encoding='utf-8') as f:
+        content = f.read()
     
-    // Replace all duplicate Top Bars and NavBars in one pass
-    // This regex matches any number of top-bar and navbar components at the start of body
-    const headerBlockRegex = /(?:<!--.*?-->\s*)?(?:<div class="top-bar">[\s\S]*?<\/div>|<nav class="navbar">[\s\S]*?<\/nav>|<header class="navbar">[\s\S]*?<\/header>)\s*/g;
+    # 1. Strip all body-start wreckage (Top Bars and Navbars)
+    header_pattern = re.compile(r'(<body[^>]*>)\s*(?:(?:<!--.*?-->\s*)?(?:<div class="top-bar">.*?</div>|<nav class="navbar">.*?</nav>|<header class="navbar">.*?</header>|<div class="top-contact">.*?</div>)\s*)+', re.DOTALL)
+    new_content = header_pattern.sub(r'\1\n' + master_header + '\n', content)
     
-    if (headerBlockRegex.test(content)) {
-        // First, strip all existing header-related blocks
-        content = content.replace(headerBlockRegex, '');
-        // Then, insert the master navBlockRoot after the opening <body> tag
-        content = content.replace(/(<body[^>]*>)/i, '$1\n' + navBlockRoot);
-        modified = true;
-    }
+    # 2. Strip all footer wreckage
+    footer_pattern = re.compile(r'<footer\b[^>]*class=["\']footer["\'][^>]*>.*?</footer>', re.DOTALL)
+    new_content = footer_pattern.sub('', new_content)
     
-    // Replace Footer
-    // Flexible regex to match the footer regardless of inline styles or spacing
-    const footerRegex = /<footer\b[^>]*class=["']footer["'][^>]*>[\s\S]*?<\/footer>/;
+    # Re-inject master footer
+    if '<script src="/js/main.js"' in new_content:
+        new_content = new_content.replace('<script src="/js/main.js"', master_footer + '\n    <script src="/js/main.js"')
+    elif '</body>' in new_content:
+        new_content = new_content.replace('</body>', master_footer + '\n</body>')
+        
+    # 3. Clean double body tags
+    new_content = new_content.replace('<body>\n<body>', '<body>')
     
-    if (footerRegex.test(content)) {
-        content = content.replace(footerRegex, footerBlockRoot);
-        modified = true;
-    } else {
-        // Footer is completely missing. Insert it before the main.js script tag or before </body>
-        if (content.includes('<script src="js/main.js"')) {
-            content = content.replace(/(<script src="js\/main\.js")/, footerBlockRoot + '\n    $1');
-        } else {
-            content = content.replace(/(<\/body>)/, footerBlockRoot + '\n$1');
-        }
-        modified = true;
-    }
-    
-    if (modified) {
-        fs.writeFileSync(filePath, content, 'utf8');
-        console.log('Updated ' + filePath);
-    }
-}
+    if new_content != content:
+        with open(path, 'w', encoding='utf-8') as f:
+            f.write(new_content)
+        print(f'Cleaned: {path}')
 
-function processDirectory(dir) {
-    const files = fs.readdirSync(dir);
-    for (const file of files) {
-        const fullPath = path.join(dir, file);
-        if (fs.statSync(fullPath).isDirectory()) {
-            if (file === 'services' || file === 'blog') processDirectory(fullPath);
-        } else if (fullPath.endsWith('.html')) {
-            processFile(fullPath);
-        }
-    }
-}
+def run():
+    for root_dir, dirs, files in os.walk(root):
+        if any(x in root_dir for x in ['.git', 'node_modules', '.gemini']): continue
+        for file in files:
+            if file.endswith('.html'):
+                clean_file(os.path.join(root_dir, file))
 
-processDirectory(rootDir);
+if __name__ == "__main__":
+    run()

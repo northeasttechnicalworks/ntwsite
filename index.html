@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-
     <!-- 1. Top Bar -->
     <div class="top-bar">
         <div class="container flex-between">
@@ -29,8 +28,7 @@
         </div>
     </div>
 
-    <!-- 2. Main Navigation -->
-    <nav class="navbar">
+    <header class="navbar">
         <div class="container nav-container">
             <a href="/index.html" class="brand-logo">
                 <div class="brand-icon">
@@ -39,17 +37,19 @@
                 NTW
             </a>
             <ul class="nav-links">
-                <li><a href="/index.html" style="color: var(--c-accent);">Home</a></li>
+                <li><a href="/index.html">Home</a></li>
                 <li><a href="/services.html">Services</a></li>
                 <li><a href="/coverage.html">Coverage</a></li>
                 <li><a href="/industries.html">Industries</a></li>
                 <li><a href="/about.html">About</a></li>
+                <li><a href="/blog.html">Blog</a></li>
             </ul>
             <a href="/contact.html" class="btn btn-dark">Contact Us</a>
         </div>
-    </nav>
+    </header>
 
     <!-- 3. Hero Section -->
+
     <section class="hero theme-dark">
         <div class="container relative">
             <div class="hero-content">
@@ -126,7 +126,7 @@
                 <div class="sec-tag" style="border-color: rgba(255,255,255,0.1); color: #cbd5e1; align-self: flex-start; margin-bottom: 24px;">Core Capabilities</div>
                 <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 40px;">
                     <h2 style="font-family: var(--font-heading); font-size: 48px; line-height: 1.1; margin: 0; max-width: 500px;">Precision Deployment Spheres</h2>
-                    <p style="color: #94a3b8; font-size: 18px; max-width: 500px; margin: 0;">Zero-variance execution across our four core infrastructure verticals. Standardized protocols map to rigorous security and operational requirements.</p>
+                    <p style="color: #94a3b8; font-size: 18px; max-width: 500px; margin: 0;">Zero-variance execution across our eight core infrastructure verticals. Standardized protocols map to rigorous security and operational requirements.</p>
                 </div>
             </div>
 
@@ -152,9 +152,9 @@
                     <p style="color: #94a3b8; font-size: 15px; line-height: 1.6;">Enterprise MDF/IDF rack buildouts. Switch chassis elevation, UPS installation, and staging environments.</p>
                 </div>
                 <div class="svc-card svc-dark" style="background: #0f172a; border: 1px solid #1e293b; padding: 40px 32px;">
-                    <div class="svc-icon-wrap" style="color: #fff; margin-bottom: 24px;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12h4l3-9 5 18 3-9h5"></path></svg></div>
-                    <h3 style="font-size: 20px; color: #fff; margin-bottom: 12px; line-height: 1.3;">Conduit & Pathway<br>Installation</h3>
-                    <p style="color: #94a3b8; font-size: 15px; line-height: 1.6;">Above-ceiling and subterranean pathway routing. EMT, rigid conduit, and specialized cable tray execution.</p>
+                    <div class="svc-icon-wrap" style="color: #fff; margin-bottom: 24px;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></div>
+                    <h3 style="font-size: 20px; color: #fff; margin-bottom: 12px; line-height: 1.3;">Intrusion Detection<br>Systems</h3>
+                    <p style="color: #94a3b8; font-size: 15px; line-height: 1.6;">Perimeter sensory arrays, motion tracing, and multi-zone alarm termination integrated straight to your chosen platform.</p>
                 </div>
                 <div class="svc-card svc-dark" style="background: #0f172a; border: 1px solid #1e293b; padding: 40px 32px;">
                     <div class="svc-icon-wrap" style="color: #fff; margin-bottom: 24px;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg></div>
@@ -305,192 +305,7 @@
         </div>
     </section>
 
-
-    
-    <!-- 10. Coverage Map Showcase -->
-    <style>
-        .map-section { background: #020617; padding: 140px 0; border-top: 1px solid #1e293b; overflow: hidden; position: relative; }
-        .map-section::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at center, rgba(90, 103, 216, 0.05) 0%, transparent 70%); pointer-events: none; }
-    </style>
-    <section class="section map-section" id="coverage">
-        <div class="container">
-            <div class="grid grid-2" style="align-items: center; gap: 80px;">
-                <div>
-                    <div class="sec-tag" style="border-color: rgba(255,255,255,0.1); color: #cbd5e1; margin-bottom: 24px;">Territory Mapping</div>
-                    <h2 style="font-family: var(--font-heading); font-size: 48px; color: #fff; margin-bottom: 32px; line-height: 1.1; letter-spacing: -1px;">The Northeast Corridor<br>Execution Grid</h2>
-                    <p style="color: #94a3b8; font-size: 18px; line-height: 1.7; margin-bottom: 40px;">Purpose-built for the most challenging topological deployments in the United States. We command the logistical execution path from the dense New York Metro to the expansive perimeters of neighboring states.</p>
-                    <div style="display: flex; gap: 40px; margin-bottom: 40px;">
-                        <div>
-                            <strong style="color: #fff; font-size: 32px; display: block; margin-bottom: 8px;">3</strong>
-                            <span style="color: #64748b; font-size: 14px; text-transform: uppercase; letter-spacing: 1px;">Primary States</span>
-                        </div>
-                        <div>
-                            <strong style="color: #fff; font-size: 32px; display: block; margin-bottom: 8px;">24/7</strong>
-                            <span style="color: #64748b; font-size: 14px; text-transform: uppercase; letter-spacing: 1px;">Dispatch Readiness</span>
-                        </div>
-                    </div>
-                    <a href="/coverage.html" class="btn btn-primary" style="background: transparent; border: 1px solid #64748b; color: #fff;">View Full Coverage Topology</a>
-                </div>
-                <div style="position: relative; height: 600px; border-radius: 12px; background: rgba(15, 23, 42, 0.4); border: 1px solid #1e293b; box-shadow: 0 0 80px rgba(0,0,0,0.5) inset; overflow: hidden; display: flex; align-items: center; justify-content: center;">
-                    <svg viewBox="0 0 600 900" width="100%" height="150%" style="transform: scale(0.85);" preserveAspectRatio="xMidYMid slice">
-                      <defs>
-                        <pattern id="hp-grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                          <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.02)" stroke-width="1" />
-                        </pattern>
-                        <filter id="hp-glow" x="-50%" y="-50%" width="200%" height="200%">
-                          <feGaussianBlur stdDeviation="4" result="blur" />
-                          <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                        </filter>
-                      </defs>
-                      <rect width="100%" height="100%" fill="url(#hp-grid)" />
-                      <!-- Simple representation of the node network -->
-                      <g stroke="rgba(90, 103, 216, 0.2)" stroke-width="2" fill="none">
-                          <path d="M 300 300 L 250 400 L 320 500 L 400 350 Z" />
-                          <path d="M 250 400 L 150 450" />
-                          <path d="M 320 500 L 280 650" />
-                      </g>
-                      <!-- Animated blips -->
-                      <circle r="3" fill="#60A5FA" filter="url(#hp-glow)">
-                        <animateMotion dur="3s" repeatCount="indefinite" path="M 300 300 L 250 400 L 320 500 L 400 350 Z" />
-                      </circle>
-                      <circle r="3" fill="#60A5FA" filter="url(#hp-glow)">
-                        <animateMotion dur="4s" repeatCount="indefinite" path="M 250 400 L 150 450" />
-                      </circle>
-                      <!-- Nodes -->
-                      <g transform="translate(300, 300)"><circle r="8" fill="#5A67D8"/><circle r="4" fill="#fff" filter="url(#hp-glow)"/></g>
-                      <g transform="translate(250, 400)">
-                        <circle r="12" fill="none" stroke="#5A67D8"><animate attributeName="r" values="12; 30" dur="2s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.8; 0" dur="2s" repeatCount="indefinite"/></circle>
-                        <circle r="8" fill="#5A67D8"/><circle r="4" fill="#fff" filter="url(#hp-glow)"/><text x="20" y="5" fill="#fff" font-family="var(--font-heading)" font-weight="700">New York</text>
-                      </g>
-                      <g transform="translate(320, 500)"><circle r="8" fill="#5A67D8"/><circle r="4" fill="#fff" filter="url(#hp-glow)"/><text x="20" y="5" fill="#fff" font-family="var(--font-heading)" font-weight="700">New Jersey</text></g>
-                      <g transform="translate(400, 350)"><circle r="8" fill="#5A67D8"/><circle r="4" fill="#fff" filter="url(#hp-glow)"/><text x="20" y="5" fill="#fff" font-family="var(--font-heading)" font-weight="700">Connecticut</text></g>
-                      <g transform="translate(150, 450)"><circle r="6" fill="#475569"/><circle r="3" fill="#94a3b8"/></g>
-                      <g transform="translate(280, 650)"><circle r="6" fill="#475569"/><circle r="3" fill="#94a3b8"/></g>
-                    </svg>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- 11. Execution Insights / Blog -->
-    <style>
-        .blog-card { display: flex; flex-direction: column; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; height: 100%; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
-        .blog-card:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
-        .blog-card-img { width: 100%; height: 220px; object-fit: cover; border-bottom: 1px solid #e2e8f0; }
-        .blog-card-content { padding: 32px; display: flex; flex-direction: column; flex-grow: 1; }
-        .blog-meta { display: flex; gap: 16px; color: #64748b; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; }
-        .blog-title { font-family: var(--font-heading); font-size: 24px; color: #0f172a; margin-bottom: 16px; line-height: 1.3; }
-        .blog-excerpt { color: #475569; font-size: 16px; line-height: 1.6; margin-bottom: 24px; flex-grow: 1; }
-        .blog-link { color: var(--c-accent); font-weight: 700; text-transform: uppercase; font-size: 13px; letter-spacing: 1px; text-decoration: none; display: flex; align-items: center; gap: 8px; }
-        .blog-link:hover { text-decoration: underline; }
-    </style>
-    <section class="section" style="background: #f8fafc; padding: 140px 0; border-top: 1px solid #e2e8f0;">
-        <div class="container">
-            <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 80px; flex-wrap: wrap; gap: 40px;">
-                <div>
-                    <div class="sec-tag" style="background: #e2e8f0; color: #0f172a; border-color: #cbd5e1; font-weight: 700; margin-bottom: 24px;">Execution Logs</div>
-                    <h2 style="font-family: var(--font-heading); font-size: 46px; color: #0f172a; line-height: 1.1; margin: 0;">Infrastructure Insights</h2>
-                </div>
-                <a href="/blog.html" class="btn btn-outline" style="border: 2px solid #0f172a; color: #0f172a; font-weight: 700; padding: 14px 32px;">Read Full Dispatch Log</a>
-            </div>
-            
-            <div class="grid grid-3" style="align-items: stretch;">
-                
-                <article class="blog-card">
-                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbd1317?auto=format&fit=crop&w=600&q=80" alt="Enterprise Rack Architecture" class="blog-card-img" style="filter: grayscale(30%) contrast(1.1);">
-                    <div class="blog-card-content">
-                        <div class="blog-meta">
-                            <span>Case File</span><span>&middot;</span><span>Mar 24</span>
-                        </div>
-                        <h3 class="blog-title"><a href="/blog/zero-downtime-mdf-cutover.html" style="color: inherit; text-decoration: none;">Executing a Zero-Downtime MDF Cutover for a 12-Story Manhattan Tower</a></h3>
-                        <p class="blog-excerpt">We unpack the rigorous logistics, contingency pathways, and off-hour execution matrix required to upgrade a core switching environment traversing tenanted floors without disrupting live trading operations.</p>
-                        <a href="/blog/zero-downtime-mdf-cutover.html" class="blog-link">Review Dispatch <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg></a>
-                    </div>
-                </article>
-                
-                <article class="blog-card">
-                    <img src="https://images.unsplash.com/photo-1520869562399-e772f042f422?auto=format&fit=crop&w=600&q=80" alt="Access Control Hardware" class="blog-card-img" style="filter: grayscale(30%) contrast(1.1);">
-                    <div class="blog-card-content">
-                        <div class="blog-meta">
-                            <span>Protocol</span><span>&middot;</span><span>Feb 12</span>
-                        </div>
-                        <h3 class="blog-title"><a href="/blog/osdp-standardization.html" style="color: inherit; text-decoration: none;">Why OSDP is Now Mandatory for Real Estate Access Deployments</a></h3>
-                        <p class="blog-excerpt">Legacy Wiegand wiring leaves commercial real estate critically vulnerable. Here is why we mandate Open Supervised Device Protocol (OSDP) across all new tenant security and perimeter barrier rollouts.</p>
-                        <a href="/blog/osdp-standardization.html" class="blog-link">Review Dispatch <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg></a>
-                    </div>
-                </article>
-                
-                <article class="blog-card">
-                    <img src="https://images.unsplash.com/photo-1614064641913-6b71a2a47291?auto=format&fit=crop&w=600&q=80" alt="Cat6A Cabling Bundles" class="blog-card-img" style="filter: grayscale(30%) contrast(1.1);">
-                    <div class="blog-card-content">
-                        <div class="blog-meta">
-                            <span>Standard</span><span>&middot;</span><span>Jan 08</span>
-                        </div>
-                        <h3 class="blog-title"><a href="/blog/certifying-fluke-networks.html" style="color: inherit; text-decoration: none;">The Cost of Uncertified Drops: Why We Fluke-Test Every Run</a></h3>
-                        <p class="blog-excerpt">Cabling isn't just copper; it's the physics handling your throughput. We explain our rigid testing standards, cross-talk mitigation, and why uncertified field work destroys long-term IT scalability.</p>
-                        <a href="/blog/certifying-fluke-networks.html" class="blog-link">Review Dispatch <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg></a>
-                    </div>
-                </article>
-                
-            </div>
-        </div>
-    </section>
-
-<footer class="footer" style="background: #020617; padding: 100px 0 40px; border-top: 1px solid #1e293b;">
-        <div class="container">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 64px; margin-bottom: 80px;">
-                <div style="grid-column: 1 / -1; max-width: 400px; @media(min-width:1024px){grid-column: span 2;}">
-                    <span style="font-family: var(--font-heading); font-weight: 800; color: #fff; font-size: 28px; display: block; margin-bottom: 16px; letter-spacing: -1px;">NTW</span>
-                    <p style="font-size: 16px; color: #94a3b8; line-height: 1.7; margin-bottom: 32px;">The Northeast corridor's most disciplined infrastructure deployment team. Delivering inspection-ready execution across NY, NJ, and CT.</p>
-                    <div>
-                        <strong style="color: #fff; display: block; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px;">Dispatch Line</strong>
-                        <a href="tel:2034181608" style="color: #fff; font-size: 20px; font-weight: 600; text-decoration: none; display: block; margin-bottom: 4px; transition: color 0.2s;" onmouseover="this.style.color='var(--c-accent)'" onmouseout="this.style.color='#fff'">(203) 418-1608</a>
-                        <a href="mailto:solutions@northeasttechworks.com" style="color: var(--c-accent); font-size: 16px; text-decoration: none; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">solutions@northeasttechworks.com</a>
-                    </div>
-                </div>
-                
-                <div>
-                    <h4 style="color: #fff; font-size: 14px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 24px;">Core Capabilities</h4>
-                    <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 16px; margin: 0;">
-                        <li><a href="/services/structured-cabling.html" style="color: #94a3b8; text-decoration: none; font-size: 15px; transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#94a3b8'">Structured Cabling</a></li>
-                        <li><a href="/services/network-rack-buildouts.html" style="color: #94a3b8; text-decoration: none; font-size: 15px; transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#94a3b8'">Network Racks</a></li>
-                        <li><a href="/services/video-surveillance-installation.html" style="color: #94a3b8; text-decoration: none; font-size: 15px; transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#94a3b8'">Video Surveillance</a></li>
-                        <li><a href="/services/access-control-installation.html" style="color: #94a3b8; text-decoration: none; font-size: 15px; transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#94a3b8'">Access Control</a></li>
-                        <li><a href="/services.html" style="color: var(--c-accent); text-decoration: none; font-size: 15px; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">View All Services &rarr;</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 style="color: #fff; font-size: 14px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 24px;">Operations</h4>
-                    <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 16px; margin: 0;">
-                        <li><a href="/industries.html" style="color: #94a3b8; text-decoration: none; font-size: 15px; transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#94a3b8'">Retail Data Rollouts</a></li>
-                        <li><a href="/industries.html" style="color: #94a3b8; text-decoration: none; font-size: 15px; transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#94a3b8'">Enterprise IT Space</a></li>
-                        <li><a href="/industries.html" style="color: #94a3b8; text-decoration: none; font-size: 15px; transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#94a3b8'">Commercial Real Estate</a></li>
-                        <li><a href="/coverage.html" style="color: #94a3b8; text-decoration: none; font-size: 15px; transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#94a3b8'">Coverage Map</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 style="color: #fff; font-size: 14px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 24px;">Corporate</h4>
-                    <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 16px; margin: 0;">
-                        <li><a href="/about.html" style="color: #94a3b8; text-decoration: none; font-size: 15px; transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#94a3b8'">Framework & Manifesto</a></li>
-                        <li><a href="/integrators.html" style="color: #94a3b8; text-decoration: none; font-size: 15px; transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#94a3b8'">National Integrator Program</a></li>
-                        <li><a href="/contact.html" style="color: #94a3b8; text-decoration: none; font-size: 15px; transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#94a3b8'">Contact Dispatch</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div style="border-top: 1px solid #1e293b; padding-top: 32px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px;">
-                <div style="color: #64748b; font-size: 14px;">&copy; 2026 Northeast Technical Works (NTW). All rights reserved.</div>
-                <div style="display: flex; gap: 32px;">
-                    <a href="/privacy-policy.html" style="color: #64748b; text-decoration: none; font-size: 14px; transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#64748b'">Privacy</a>
-                    <a href="/terms-of-service.html" style="color: #64748b; text-decoration: none; font-size: 14px; transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#64748b'">Terms</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-        <!-- 10. Coverage Map Showcase -->
+<!-- 10. Coverage Map Showcase -->
     <style>
         .map-section { background: #020617; padding: 140px 0; border-top: 1px solid #1e293b; overflow: hidden; position: relative; }
         .map-section::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at center, rgba(90, 103, 216, 0.05) 0%, transparent 70%); pointer-events: none; }
@@ -584,7 +399,7 @@
             <div class="grid grid-3" style="align-items: stretch;">
                 
                 <article class="blog-card">
-                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbd1317?auto=format&fit=crop&w=600&q=80" alt="Enterprise Rack Architecture" class="blog-card-img" style="filter: grayscale(30%) contrast(1.1);">
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600&q=80" alt="Enterprise Rack Architecture" class="blog-card-img" style="filter: grayscale(30%) contrast(1.1);">
                     <div class="blog-card-content">
                         <div class="blog-meta">
                             <span>Case File</span><span>&middot;</span><span>Mar 24</span>
@@ -596,7 +411,7 @@
                 </article>
                 
                 <article class="blog-card">
-                    <img src="https://images.unsplash.com/photo-1520869562399-e772f042f422?auto=format&fit=crop&w=600&q=80" alt="Access Control Hardware" class="blog-card-img" style="filter: grayscale(30%) contrast(1.1);">
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80" alt="Access Control Hardware" class="blog-card-img" style="filter: grayscale(30%) contrast(1.1);">
                     <div class="blog-card-content">
                         <div class="blog-meta">
                             <span>Protocol</span><span>&middot;</span><span>Feb 12</span>
@@ -608,7 +423,7 @@
                 </article>
                 
                 <article class="blog-card">
-                    <img src="https://images.unsplash.com/photo-1614064641913-6b71a2a47291?auto=format&fit=crop&w=600&q=80" alt="Cat6A Cabling Bundles" class="blog-card-img" style="filter: grayscale(30%) contrast(1.1);">
+                    <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=600&q=80" alt="Cat6A Cabling Bundles" class="blog-card-img" style="filter: grayscale(30%) contrast(1.1);">
                     <div class="blog-card-content">
                         <div class="blog-meta">
                             <span>Standard</span><span>&middot;</span><span>Jan 08</span>
@@ -623,10 +438,12 @@
         </div>
     </section>
 
+    <script src="/js/main.js"></script>
+    <script src="/js/map.js"></script>
     <footer class="footer" style="background: #020617; padding: 100px 0 40px; border-top: 1px solid #1e293b;">
         <div class="container">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 64px; margin-bottom: 80px;">
-                <div style="grid-column: 1 / -1; max-width: 400px; @media(min-width:1024px){grid-column: span 2;}">
+            <div class="footer-top">
+                <div style="max-width: 400px;">
                     <span style="font-family: var(--font-heading); font-weight: 800; color: #fff; font-size: 28px; display: block; margin-bottom: 16px; letter-spacing: -1px;">NTW</span>
                     <p style="font-size: 16px; color: #94a3b8; line-height: 1.7; margin-bottom: 32px;">The Northeast corridor's most disciplined infrastructure deployment team. Delivering inspection-ready execution across NY, NJ, and CT.</p>
                     <div>
@@ -676,8 +493,6 @@
             </div>
         </div>
     </footer>
-    <script src="/js/main.js"></script>
-    <script src="/js/map.js"></script>
 </body>
 </html>
 

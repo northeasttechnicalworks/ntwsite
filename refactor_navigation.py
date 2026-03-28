@@ -1,9 +1,7 @@
-const fs = require('fs');
-const path = require('path');
+import os
+import re
 
-const rootDir = 'e:/websites/NTW';
-
-const navBlockRoot = `    <!-- 1. Top Bar -->
+HEADER_TEMPLATE = """    <!-- 1. Top Bar -->
     <div class="top-bar">
         <div class="container flex-between">
             <div class="top-contact">
@@ -42,9 +40,9 @@ const navBlockRoot = `    <!-- 1. Top Bar -->
             </ul>
             <a href="/contact.html" class="btn btn-dark">Contact Us</a>
         </div>
-    </header>`;
+    </header>"""
 
-const footerBlockRoot = `    <footer class="footer" style="background: #020617; padding: 100px 0 40px; border-top: 1px solid #1e293b;">
+FOOTER_TEMPLATE = """    <footer class="footer" style="background: #020617; padding: 100px 0 40px; border-top: 1px solid #1e293b;">
         <div class="container">
             <div class="footer-top">
                 <div style="max-width: 400px;">
@@ -96,57 +94,59 @@ const footerBlockRoot = `    <footer class="footer" style="background: #020617; 
                 </div>
             </div>
         </div>
-    </footer>`;
+    </footer>"""
 
-function processFile(filePath) {
-    let content = fs.readFileSync(filePath, 'utf8');
-    let modified = false;
-    
-    // Replace all duplicate Top Bars and NavBars in one pass
-    // This regex matches any number of top-bar and navbar components at the start of body
-    const headerBlockRegex = /(?:<!--.*?-->\s*)?(?:<div class="top-bar">[\s\S]*?<\/div>|<nav class="navbar">[\s\S]*?<\/nav>|<header class="navbar">[\s\S]*?<\/header>)\s*/g;
-    
-    if (headerBlockRegex.test(content)) {
-        // First, strip all existing header-related blocks
-        content = content.replace(headerBlockRegex, '');
-        // Then, insert the master navBlockRoot after the opening <body> tag
-        content = content.replace(/(<body[^>]*>)/i, '$1\n' + navBlockRoot);
-        modified = true;
-    }
-    
-    // Replace Footer
-    // Flexible regex to match the footer regardless of inline styles or spacing
-    const footerRegex = /<footer\b[^>]*class=["']footer["'][^>]*>[\s\S]*?<\/footer>/;
-    
-    if (footerRegex.test(content)) {
-        content = content.replace(footerRegex, footerBlockRoot);
-        modified = true;
-    } else {
-        // Footer is completely missing. Insert it before the main.js script tag or before </body>
-        if (content.includes('<script src="js/main.js"')) {
-            content = content.replace(/(<script src="js\/main\.js")/, footerBlockRoot + '\n    $1');
-        } else {
-            content = content.replace(/(<\/body>)/, footerBlockRoot + '\n$1');
-        }
-        modified = true;
-    }
-    
-    if (modified) {
-        fs.writeFileSync(filePath, content, 'utf8');
-        console.log('Updated ' + filePath);
-    }
-}
+def process_file(filepath):
+    print(f"Processing: {filepath}")
+    with open(filepath, 'r', encoding='utf-8') as f:
+        content = f.read()
 
-function processDirectory(dir) {
-    const files = fs.readdirSync(dir);
-    for (const file of files) {
-        const fullPath = path.join(dir, file);
-        if (fs.statSync(fullPath).isDirectory()) {
-            if (file === 'services' || file === 'blog') processDirectory(fullPath);
-        } else if (fullPath.endsWith('.html')) {
-            processFile(fullPath);
-        }
-    }
-}
+    # 1. Fix typos like <<body>
+    content = content.replace('<<body>', '<body>')
+    content = content.replace('<body><', '<body>') # Fix stray < after body start
 
-processDirectory(rootDir);
+    # 2. Replace Header
+    # Look for <!-- 1. Top Bar --> to </header>
+    header_pattern = re.compile(r'<!-- 1\. Top Bar -->.*?header_placeholder_end', re.DOTALL)
+    # Since there might be garbage between header and hero, we target the whole navbar area.
+    # We'll use a more robust search: from <!-- 1. Top Bar --> until the next <!-- 3. Hero or end of </header>
+    
+    # Let's try replacing from <body> to <!-- 3. Hero
+    # Re-extracting from <body> till the first Section or Hero
+    body_pattern = re.compile(r'<body>.*?<!-- 3\.', re.DOTALL)
+    if body_pattern.search(content):
+        content = body_pattern.sub(f'<body>\n{HEADER_TEMPLATE}\n\n    <!-- 3.', content)
+    else:
+        # Fallback for pages that don't have <!-- 3. Hero
+        # Just replace till the first <section
+        section_pattern = re.compile(r'<body>.*?<section', re.DOTALL)
+        content = section_pattern.sub(f'<body>\n{HEADER_TEMPLATE}\n\n    <section', content)
+
+    # 3. Replace Footer
+    # Look for <footer class="footer".*?</footer>
+    # We want to replace ALL footers with a single one.
+    footer_pattern = re.compile(r'<footer class="footer".*?</footer>', re.DOTALL)
+    
+    # Remove all footers first
+    content = footer_pattern.sub('', content)
+    
+    # Re-insert the master footer before </body> or before the script tags at the end
+    if '</body>' in content:
+        content = content.replace('</body>', f'{FOOTER_TEMPLATE}\n</body>')
+    
+    # 4. Final Cleanup: Remove multiple consecutive empty lines
+    content = re.sub(r'\n\s*\n\s*\n', '\n\n', content)
+    
+    with open(filepath, 'w', encoding='utf-8') as f:
+        f.write(content)
+
+def main():
+    target_dirs = ['.', 'services', 'blog']
+    for d in target_dirs:
+        if not os.path.exists(d): continue
+        for filename in os.listdir(d):
+            if filename.endswith('.html'):
+                process_file(os.path.join(d, filename))
+
+if __name__ == "__main__":
+    main()

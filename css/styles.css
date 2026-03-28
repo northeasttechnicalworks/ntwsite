@@ -113,6 +113,31 @@ a:hover { color: var(--c-accent); }
 .nav-links li a { font-weight: 500; font-size: 15px; color: var(--c-text-main); }
 .nav-links li a:hover { color: var(--c-accent); }
 
+/* Global Utilities */
+.desktop-only { display: flex !important; }
+.mobile-only { display: none !important; }
+
+@media (max-width: 900px) {
+    .desktop-only { display: none !important; }
+    .mobile-only { display: block !important; }
+}
+
+.portal-tag {
+    font-size: 10px;
+    background: var(--c-surface-dark);
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: var(--c-accent);
+    border: 1px solid var(--c-border-dark);
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover .portal-tag {
+    background: var(--c-accent);
+    color: #fff;
+    border-color: var(--c-accent);
+}
+
 /* Hero */
 .hero {
   background-color: var(--c-bg-dark);
@@ -438,4 +463,11 @@ textarea.form-control { min-height: 120px; resize: vertical; }
     position: relative;
     z-index: 100;
     background: #070D1E;
+}
+
+@media (max-width: 900px) {
+    .footer-top {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
 }

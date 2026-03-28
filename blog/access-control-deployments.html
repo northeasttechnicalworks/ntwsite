@@ -1,9 +1,122 @@
-const fs = require('fs');
-const path = require('path');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Control Systems: What Actually Matters in Real-World Deployments | NTW Insights</title>
+    <meta name="description" content="Discover why commercial door hardware, fire-code compliance, and integration design matter significantly more than software features in access control deployments.">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        :root {
+            --blog-bg: #070D1E;
+            --blog-border: rgba(255,255,255,0.08);
+            --blog-gold: #ceab60;
+            --blog-text-muted: #94a3b8;
+        }
+        
+        body { background: var(--blog-bg); color: #fff; line-height: 1.8; font-family: var(--font-body); }
+        
+        .article-hero {
+            padding: 160px 0 80px;
+            background: linear-gradient(180deg, var(--c-bg-dark) 0%, var(--blog-bg) 100%);
+            border-bottom: 1px solid var(--blog-border);
+        }
 
-const rootDir = 'e:/websites/NTW';
+        .category-tag {
+            color: var(--blog-gold);
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            display: inline-block;
+        }
 
-const navBlockRoot = `    <!-- 1. Top Bar -->
+        .article-title {
+            font-family: var(--font-heading);
+            font-size: 56px;
+            line-height: 1.1;
+            margin-bottom: 32px;
+            letter-spacing: -1px;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            color: var(--blog-text-muted);
+            font-size: 14px;
+            font-weight: 600;
+            border-top: 1px solid var(--blog-border);
+            padding-top: 24px;
+            margin-top: 40px;
+        }
+
+        .article-body {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 80px 24px;
+            font-size: 18px;
+            color: #cbd5e1;
+        }
+
+        .article-body h2 {
+            font-family: var(--font-heading);
+            font-size: 32px;
+            color: #fff;
+            margin: 64px 0 24px;
+            line-height: 1.3;
+        }
+
+        .article-body p {
+            margin-bottom: 24px;
+        }
+
+        .article-body strong {
+            color: #fff;
+        }
+
+        .article-img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 48px 0;
+            border: 1px solid var(--blog-border);
+            filter: grayscale(20%);
+        }
+
+        .author-box {
+            margin-top: 80px;
+            padding: 40px;
+            background: #0b1226;
+            border: 1px solid var(--blog-border);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .author-info h4 {
+            font-size: 20px;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+
+        .author-info p {
+            font-size: 15px;
+            color: var(--blog-text-muted);
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .article-title { font-size: 40px; }
+            .article-hero { padding: 120px 0 60px; }
+            .article-body { font-size: 16px; padding: 40px 24px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- 1. Top Bar -->
     <div class="top-bar">
         <div class="container flex-between">
             <div class="top-contact">
@@ -42,9 +155,63 @@ const navBlockRoot = `    <!-- 1. Top Bar -->
             </ul>
             <a href="/contact.html" class="btn btn-dark">Contact Us</a>
         </div>
-    </header>`;
+    </header>
 
-const footerBlockRoot = `    <footer class="footer" style="background: #020617; padding: 100px 0 40px; border-top: 1px solid #1e293b;">
+    <section class="article-hero">
+        <div class="container">
+            <div style="max-width: 900px; margin: 0 auto;">
+                <span class="category-tag">Access Control</span>
+                <h1 class="article-title">Access Control Systems: What Actually Matters in Real-World Deployments</h1>
+                <div class="article-meta">
+                    <span>January 28, 2026</span>
+                    <span>&middot;</span>
+                    <span>7 Min Read</span>
+                    <span>&middot;</span>
+                    <span>Hardware Integration</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <article class="article-body">
+        <p>When selecting an access control system, corporate real estate directors and IT managers frequently become obsessed with software features. They evaluate mobile credentialing, cloud-managed dashboards, and active-directory integrations. While the software layer is critical to user experience, it has almost zero impact on the physical security and operational reliability of the system.</p>
+        
+        <p>In the field, access control fails at the door. It fails because of improper door hardware selection, severe fire-code compliance violations, and poorly executed logic integration.</p>
+
+        <img src="https://images.unsplash.com/photo-1520869562399-e772f042f422?auto=format&fit=crop&w=1200&q=80" alt="Commercial Door Hardware and Access Control" class="article-img">
+
+        <h2>The Reality of Door Hardware Integration</h2>
+        
+        <p>A $2,000 intelligent IP door controller is entirely useless if the locking hardware fails to latch into the strike frame. We see this constantly on rapid commercial build-outs: standard "stick-on" magnetic locks are installed because they are cheap and easy to mount, bypassing the complexity of mortising an electrified door lock into an aluminum storefront frame.</p>
+
+        <p>This is a catastrophic design flaw. Magnetic locks (maglocks) require continuous power to stay secure. In a power outage, unless heavily backed by battery uninterruptible power supplies (UPS), the doors instantly unlock and remain open. More importantly, maglocks place significant friction on fire-code compliance.</p>
+
+        <p>Electric strikes, electrified mortise locks, and electrified panic crash bars represent the correct execution standard. These mechanisms allow the door to remain physically latched and secure from the exterior while maintaining completely free mechanical egress from the interior. No passive infrared request-to-exit (REX) sensors required. No risk of trapping employees in a burning building during a logic failure.</p>
+
+        <h2>Navigating Compliance and Egress Codes</h2>
+
+        <p>Access control is not an IT discipline; it is a life-safety discipline. Every electrified door must comply strictly with NFPA 101 Life Safety Code and local Authority Having Jurisdiction (AHJ) building codes.</p>
+
+        <p>The most common failure we encounter when taking over a poorly installed site is the lack of proper REX (Request to Exit) integration on electromagnetic locks. Life safety code mandates that if a maglock is installed, it must instantly disengage via a physical push-to-exit button, a passive motion sensor, AND tie directly into the building's central fire alarm panel. If the fire alarm triggers, power to the maglock must instantly drop to allow structural egress. If an installer misses that single integration relay, the building will fail its fire inspection—guaranteed.</p>
+
+        <h2>Design Over Hardware</h2>
+
+        <p>The success of an access deployment relies entirely on meticulous, door-by-door design planning before a single wire is pulled. You cannot standardize a single door setup across a commercial enterprise because every frame type is different. Wood doors require core-drilling for electrified hinges. Hollow metal frames require precision cutting for heavy-duty strikes. Glass commercial storefronts require specialized latch retraction crash bars.</p>
+
+        <p>A true access control deployment is an engineering exercise in physical friction, life safety, and barrier mechanics.</p>
+
+        <p>At NTW, we prioritize the physical layer. We engineer the exact hardware required for each unique door frame, we map the exact logic relays required for local fire code compliance, and we physically embed the locking mechanism so it feels as native to the door as the handle itself. Software platforms upgrade and change; but a perfectly engineered electrified mortise lock will secure an asset for decades.</p>
+
+        <div class="author-box">
+            <div class="author-info">
+                <h4>NTW Deployment Logistics Command</h4>
+                <p>Northeast Technical Works engineers, designs, and installs code-compliant physical barrier systems across complex commercial real estate.</p>
+            </div>
+        </div>
+    </article>
+
+    <script src="/js/main.js"></script>
+    <footer class="footer" style="background: #020617; padding: 100px 0 40px; border-top: 1px solid #1e293b;">
         <div class="container">
             <div class="footer-top">
                 <div style="max-width: 400px;">
@@ -96,57 +263,6 @@ const footerBlockRoot = `    <footer class="footer" style="background: #020617; 
                 </div>
             </div>
         </div>
-    </footer>`;
-
-function processFile(filePath) {
-    let content = fs.readFileSync(filePath, 'utf8');
-    let modified = false;
-    
-    // Replace all duplicate Top Bars and NavBars in one pass
-    // This regex matches any number of top-bar and navbar components at the start of body
-    const headerBlockRegex = /(?:<!--.*?-->\s*)?(?:<div class="top-bar">[\s\S]*?<\/div>|<nav class="navbar">[\s\S]*?<\/nav>|<header class="navbar">[\s\S]*?<\/header>)\s*/g;
-    
-    if (headerBlockRegex.test(content)) {
-        // First, strip all existing header-related blocks
-        content = content.replace(headerBlockRegex, '');
-        // Then, insert the master navBlockRoot after the opening <body> tag
-        content = content.replace(/(<body[^>]*>)/i, '$1\n' + navBlockRoot);
-        modified = true;
-    }
-    
-    // Replace Footer
-    // Flexible regex to match the footer regardless of inline styles or spacing
-    const footerRegex = /<footer\b[^>]*class=["']footer["'][^>]*>[\s\S]*?<\/footer>/;
-    
-    if (footerRegex.test(content)) {
-        content = content.replace(footerRegex, footerBlockRoot);
-        modified = true;
-    } else {
-        // Footer is completely missing. Insert it before the main.js script tag or before </body>
-        if (content.includes('<script src="js/main.js"')) {
-            content = content.replace(/(<script src="js\/main\.js")/, footerBlockRoot + '\n    $1');
-        } else {
-            content = content.replace(/(<\/body>)/, footerBlockRoot + '\n$1');
-        }
-        modified = true;
-    }
-    
-    if (modified) {
-        fs.writeFileSync(filePath, content, 'utf8');
-        console.log('Updated ' + filePath);
-    }
-}
-
-function processDirectory(dir) {
-    const files = fs.readdirSync(dir);
-    for (const file of files) {
-        const fullPath = path.join(dir, file);
-        if (fs.statSync(fullPath).isDirectory()) {
-            if (file === 'services' || file === 'blog') processDirectory(fullPath);
-        } else if (fullPath.endsWith('.html')) {
-            processFile(fullPath);
-        }
-    }
-}
-
-processDirectory(rootDir);
+    </footer>
+</body>
+</html>

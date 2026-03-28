@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infrastructure Insights | Northeast Technical Works (NTW)</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        :root {
+            --blog-bg: #070D1E;
+            --blog-surface: #0b1226;
+            --blog-border: rgba(255,255,255,0.08);
+            --blog-gold: #ceab60;
+            --blog-text-muted: #94a3b8;
+        }
+        
+        body { background: var(--blog-bg); color: #fff; line-height: 1.6; }
+        
+        .blog-hero {
+            padding: 180px 0 100px;
+            position: relative;
+            background: linear-gradient(180deg, var(--c-bg-dark) 0%, var(--blog-bg) 100%);
+            border-bottom: 1px solid var(--blog-border);
+        }
+
+        .blog-hero .microtext {
+            color: var(--blog-gold);
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-top: 32px;
+            display: inline-block;
+            border-top: 1px solid var(--blog-gold);
+            padding-top: 12px;
+        }
+
+        /* Featured Articles */
+        .featured-section {
+            padding: 100px 0;
+            border-bottom: 1px solid var(--blog-border);
+        }
+        
+        .featured-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 60px;
+        }
+        
+        .featured-card {
+            display: block;
+            color: #fff;
+        }
+        
+        .featured-img-wrap {
+            overflow: hidden;
+            border-radius: 8px;
+            margin-bottom: 32px;
+            position: relative;
+            border: 1px solid var(--blog-border);
+        }
+        
+        .featured-img {
+            width: 100%;
+            height: 480px;
+            object-fit: cover;
+            filter: grayscale(40%) contrast(1.1);
+            transition: filter 0.5s ease, transform 0.8s ease;
+        }
+        
+        .featured-card:hover .featured-img {
+            filter: grayscale(0%) contrast(1.05);
+            transform: scale(1.02);
+        }
+        
+        .category-tag {
+            font-family: var(--font-body);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--blog-gold);
+            margin-bottom: 16px;
+            display: block;
+        }
+        
+        .featured-title {
+            font-family: var(--font-heading);
+            font-size: 40px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            transition: color 0.3s ease;
+        }
+        
+        .featured-card:hover .featured-title {
+            color: var(--blog-gold);
+        }
+        
+        .featured-excerpt {
+            color: var(--blog-text-muted);
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        /* Article Grid */
+        .article-grid-section {
+            padding: 120px 0;
+            background: #020617;
+        }
+        
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+        
+        .article-card {
+            background: var(--blog-surface);
+            border: 1px solid var(--blog-border);
+            border-radius: 8px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+            text-decoration: none;
+        }
+        
+        .article-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            border-color: rgba(255,255,255,0.15);
+        }
+        
+        .article-card .category-tag {
+            color: #fff;
+            opacity: 0.6;
+            margin-bottom: 24px;
+        }
+        
+        .article-card-title {
+            font-family: var(--font-heading);
+            font-size: 28px;
+            color: #fff;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            transition: color 0.3s;
+        }
+        
+        .article-card:hover .article-card-title {
+            color: var(--blog-gold);
+        }
+        
+        .article-card-excerpt {
+            color: var(--blog-text-muted);
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 32px;
+            flex-grow: 1;
+        }
+        
+        .read-cta {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #fff;
+            margin-top: auto;
+        }
+        
+        .read-cta svg {
+            transition: transform 0.3s ease;
+        }
+        
+        .article-card:hover .read-cta svg {
+            transform: translateX(4px);
+            color: var(--blog-gold);
+        }
+
+        /* Final CTA */
+        .blog-cta {
+            padding: 120px 0;
+            background: var(--blog-bg);
+            border-top: 1px solid var(--blog-border);
+            text-align: center;
+        }
+
+        @media (max-width: 1024px) {
+            .featured-grid { grid-template-columns: 1fr; }
+            .grid-4 { grid-template-columns: 1fr; }
+            .featured-img { height: 320px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- 1. Top Bar -->
+    <div class="top-bar">
+        <div class="container flex-between">
+            <div class="top-contact">
+                <span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    solutions@northeasttechworks.com
+                </span>
+                <span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    (203) 418-1608
+                </span>
+            </div>
+            <div class="top-contact" style="gap: 16px;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </div>
+        </div>
+    </div>
+
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="/index.html" class="brand-logo">
+                <div class="brand-icon">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="white" style="margin: 5px;"><rect x="2" y="2" width="20" height="20" rx="4"/></svg>
+                </div>
+                NTW
+            </a>
+            <ul class="nav-links">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/services.html">Services</a></li>
+                <li><a href="/coverage.html">Coverage</a></li>
+                <li><a href="/industries.html">Industries</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/blog.html">Blog</a></li>
+            </ul>
+            <a href="/contact.html" class="btn btn-dark">Contact Us</a>
+        </div>
+    </header>
+
+    <!-- 3. Article Grid -->
+    <section class="article-grid-section">
+        <div class="container">
+            <h3 style="font-family: var(--font-heading); font-size: 24px; text-transform: uppercase; letter-spacing: 4px; color: #fff; margin-bottom: 60px; border-bottom: 1px solid var(--blog-border); padding-bottom: 24px;">Standard Dispatches</h3>
+            
+            <div class="grid-4">
+                
+                <a href="/blog/access-control-deployments.html" class="article-card">
+                    <span class="category-tag">Access Control</span>
+                    <h3 class="article-card-title">Access Control Systems: What Actually Matters in Real-World Deployments</h3>
+                    <p class="article-card-excerpt">Hardware selection means nothing if door integration fails. A look into common barrier hardware mistakes, fire-code compliance considerations, and OSDP perimeter mapping.</p>
+                    <div class="read-cta">
+                        Read Article <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </div>
+                </a>
+
+                <a href="/blog/conduit-vs-open-cabling.html" class="article-card">
+                    <span class="category-tag">Cabling</span>
+                    <h3 class="article-card-title">Conduit vs Open Cabling: When Each Approach Makes Sense</h3>
+                    <p class="article-card-excerpt">Navigating mechanical pathways. We analyze code requirements, cost tradeoffs, physical durability, and execution strategies for warehouse versus commercial office environments.</p>
+                    <div class="read-cta">
+                        Read Article <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </div>
+                </a>
+
+                <a href="/blog/multi-site-rollouts.html" class="article-card">
+                    <span class="category-tag">Operations</span>
+                    <h3 class="article-card-title">How Multi-Site Rollouts Fail — And How to Execute Them Properly</h3>
+                    <p class="article-card-excerpt">National deployments collapse due to execution variance. Learn the zero-variance synchronization methods required to standard-deploy identical physical stacks across hundreds of regional environments.</p>
+                    <div class="read-cta">
+                        Read Article <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </div>
+                </a>
+
+                <a href="/blog/preventive-maintenance-cost.html" class="article-card">
+                    <span class="category-tag">Operations</span>
+                    <h3 class="article-card-title">Preventive Infrastructure Maintenance vs Emergency Repairs: A Cost Breakdown</h3>
+                    <p class="article-card-excerpt">An objective contrast between rigid, scheduled physical-layer diagnostics and the devastating financial reality of emergency downtime repairs. Uptime is a consequence of preparation.</p>
+                    <div class="read-cta">
+                        Read Article <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. CTA Section -->
+    <section class="blog-cta">
+        <div class="container">
+            <div style="max-width: 700px; margin: 0 auto;">
+                <h2 style="font-family: var(--font-heading); font-size: 48px; color: #fff; margin-bottom: 24px;">Plan Your Next Deployment</h2>
+                <p style="font-size: 18px; color: var(--blog-text-muted); line-height: 1.6; margin-bottom: 40px;">Apply these insights to your infrastructure. Work with a team that executes strictly to standard.</p>
+                <a href="mailto:solutions@northeasttechworks.com" class="btn" style="background: var(--blog-gold); color: #000; padding: 18px 40px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 14px; text-decoration: none; display: inline-block;">Request Deployment</a>
+            </div>
+        </div>
+    </section>
+
+    <script src="/js/main.js"></script>
+    <footer class="footer" style="background: #020617; padding: 100px 0 40px; border-top: 1px solid #1e293b;">
+        <div class="container">
+            <div class="footer-top">
+                <div style="max-width: 400px;">
+                    <span style="font-family: var(--font-heading); font-weight: 800; color: #fff; font-size: 28px; display: block; margin-bottom: 16px; letter-spacing: -1px;">NTW</span>
+                    <p style="font-size: 16px; color: #94a3b8; line-height: 1.7; margin-bottom: 32px;">The Northeast corridor's most disciplined infrastructure deployment team. Delivering inspection-ready execution across NY, NJ, and CT.</p>
+                    <div>
+                        <strong style="color: #fff; display: block; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px;">Dispatch Line</strong>
+                        <a href="tel:2034181608" style="color: #fff; font-size: 20px; font-weight: 600; text-decoration: none; display: block; margin-bottom: 4px; transition: color 0.2s;" onmouseover="this.style.color='var(--c-accent)'" onmouseout="this.style.color='#fff'">(203) 418-1608</a>
+                        <a href="mailto:solutions@northeasttechworks.com" style="color: var(--c-accent); font-size: 16px; text-decoration: none; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">solutions@northeasttechworks.com</a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 style="color: #fff; font-size: 14px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 24px;">Core Capabilities</h4>
+                    <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 16px; margin: 0;">
+                        <li><a href="/services/structured-cabling.html" style="color: #94a3b8; text-decoration: none; font-size: 15px; transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#94a3b8'">Structured Cabling</a></li>
+                        <li><a href="/services/network-rack-buildouts.html" style="color: #94a3b8; text-decoration: none; font-size: 15px; transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#94a3b8'">Network Racks</a></li>
+                        <li><a href="/services/video-surveillance-installation.html" style="color: #94a3b8; text-decoration: none; font-size: 15px; transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#94a3b8'">Video Surveillance</a></li>
+                        <li><a href="/services/access-control-installation.html" style="color: #94a3b8; text-decoration: none; font-size: 15px; transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#94a3b8'">Access Control</a></li>
+                        <li><a href="/services.html" style="color: var(--c-accent); text-decoration: none; font-size: 15px; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">View All Services &rarr;</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 style="color: #fff; font-size: 14px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 24px;">Operations</h4>
+                    <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 16px; margin: 0;">
+                        <li><a href="/industries.html" style="color: #94a3b8; text-decoration: none; font-size: 15px; transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#94a3b8'">Retail Data Rollouts</a></li>
+                        <li><a href="/industries.html" style="color: #94a3b8; text-decoration: none; font-size: 15px; transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#94a3b8'">Enterprise IT Space</a></li>
+                        <li><a href="/industries.html" style="color: #94a3b8; text-decoration: none; font-size: 15px; transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#94a3b8'">Commercial Real Estate</a></li>
+                        <li><a href="/coverage.html" style="color: #94a3b8; text-decoration: none; font-size: 15px; transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#94a3b8'">Coverage Map</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 style="color: #fff; font-size: 14px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 24px;">Corporate</h4>
+                    <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 16px; margin: 0;">
+                        <li><a href="/about.html" style="color: #94a3b8; text-decoration: none; font-size: 15px; transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#94a3b8'">Framework & Manifesto</a></li>
+                        <li><a href="/integrators.html" style="color: #94a3b8; text-decoration: none; font-size: 15px; transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#94a3b8'">National Integrator Program</a></li>
+                        <li><a href="/contact.html" style="color: #94a3b8; text-decoration: none; font-size: 15px; transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#94a3b8'">Contact Dispatch</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="border-top: 1px solid #1e293b; padding-top: 32px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px;">
+                <div style="color: #64748b; font-size: 14px;">&copy; 2026 Northeast Technical Works (NTW). All rights reserved.</div>
+                <div style="display: flex; gap: 32px;">
+                    <a href="/privacy-policy.html" style="color: #64748b; text-decoration: none; font-size: 14px; transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#64748b'">Privacy</a>
+                    <a href="/terms-of-service.html" style="color: #64748b; text-decoration: none; font-size: 14px; transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#64748b'">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

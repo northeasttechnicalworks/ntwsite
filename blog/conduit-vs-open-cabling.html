@@ -1,9 +1,122 @@
-const fs = require('fs');
-const path = require('path');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conduit vs Open Cabling: When Each Approach Makes Sense | NTW Insights</title>
+    <meta name="description" content="Navigating mechanical pathways and commercial wiring methods. Analyze code requirements, physical durability, cost tradeoffs, and execution strategies.">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        :root {
+            --blog-bg: #070D1E;
+            --blog-border: rgba(255,255,255,0.08);
+            --blog-gold: #ceab60;
+            --blog-text-muted: #94a3b8;
+        }
+        
+        body { background: var(--blog-bg); color: #fff; line-height: 1.8; font-family: var(--font-body); }
+        
+        .article-hero {
+            padding: 160px 0 80px;
+            background: linear-gradient(180deg, var(--c-bg-dark) 0%, var(--blog-bg) 100%);
+            border-bottom: 1px solid var(--blog-border);
+        }
 
-const rootDir = 'e:/websites/NTW';
+        .category-tag {
+            color: var(--blog-gold);
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            display: inline-block;
+        }
 
-const navBlockRoot = `    <!-- 1. Top Bar -->
+        .article-title {
+            font-family: var(--font-heading);
+            font-size: 56px;
+            line-height: 1.1;
+            margin-bottom: 32px;
+            letter-spacing: -1px;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            color: var(--blog-text-muted);
+            font-size: 14px;
+            font-weight: 600;
+            border-top: 1px solid var(--blog-border);
+            padding-top: 24px;
+            margin-top: 40px;
+        }
+
+        .article-body {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 80px 24px;
+            font-size: 18px;
+            color: #cbd5e1;
+        }
+
+        .article-body h2 {
+            font-family: var(--font-heading);
+            font-size: 32px;
+            color: #fff;
+            margin: 64px 0 24px;
+            line-height: 1.3;
+        }
+
+        .article-body p {
+            margin-bottom: 24px;
+        }
+
+        .article-body strong {
+            color: #fff;
+        }
+
+        .article-img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 48px 0;
+            border: 1px solid var(--blog-border);
+            filter: grayscale(20%);
+        }
+
+        .author-box {
+            margin-top: 80px;
+            padding: 40px;
+            background: #0b1226;
+            border: 1px solid var(--blog-border);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .author-info h4 {
+            font-size: 20px;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+
+        .author-info p {
+            font-size: 15px;
+            color: var(--blog-text-muted);
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .article-title { font-size: 40px; }
+            .article-hero { padding: 120px 0 60px; }
+            .article-body { font-size: 16px; padding: 40px 24px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- 1. Top Bar -->
     <div class="top-bar">
         <div class="container flex-between">
             <div class="top-contact">
@@ -42,9 +155,63 @@ const navBlockRoot = `    <!-- 1. Top Bar -->
             </ul>
             <a href="/contact.html" class="btn btn-dark">Contact Us</a>
         </div>
-    </header>`;
+    </header>
 
-const footerBlockRoot = `    <footer class="footer" style="background: #020617; padding: 100px 0 40px; border-top: 1px solid #1e293b;">
+    <section class="article-hero">
+        <div class="container">
+            <div style="max-width: 900px; margin: 0 auto;">
+                <span class="category-tag">Cabling</span>
+                <h1 class="article-title">Conduit vs Open Cabling: When Each Approach Makes Sense</h1>
+                <div class="article-meta">
+                    <span>December 15, 2025</span>
+                    <span>&middot;</span>
+                    <span>8 Min Read</span>
+                    <span>&middot;</span>
+                    <span>Physical Execution</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <article class="article-body">
+        <p>In the low-voltage commercial wiring sector, the debate between rigid conduit routing and open-air J-hook cabling is a constant friction point between general contractors, IT directors, and field integrators. The ultimate decision fundamentally impacts project execution cost, labor timelines, and the long-term physical durability of the IT infrastructure.</p>
+        
+        <p>There is no universal correct choice. Instead, the approach must be deliberately mapped to the specific operational environment, local AHJ (Authority Having Jurisdiction) building codes, and future scalability requirements.</p>
+
+        <img src="https://images.unsplash.com/photo-1614064641913-6b71a2a47291?auto=format&fit=crop&w=1200&q=80" alt="Extensive Data Cabling and Conduit Trays" class="article-img">
+
+        <h2>The Argument for Free-Air Cabling</h2>
+        
+        <p>For standard Class A commercial office spaces, drop-ceiling (plenum) free-air cabling is the execution standard. Using heavy-duty J-hooks suspended dynamically from structural steel or ceiling beams, installers create an invisible suspension highway floating above the acoustic ceiling tiles.</p>
+
+        <p>The core advantage here is pure cost efficiency and extreme malleability. When tens of thousands of feet of structured cabling need to reach hundreds of workstation drops, conduit is both financially prohibitive and logistically suffocating. Running plenum-rated CAT6a bundles over open J-hooks allows IT teams to effortlessly add new workstation runs or access point data lines in the future without attempting to snake wires through packed, bending 1-inch EMT pipe.</p>
+
+        <p>Providing the drop-ceiling is classified correctly for air-handling (necessitating explicitly rated Teflon CMP plenum jackets to prevent toxic smoke in a fire), open cabling is the fastest, most scalable choice for low-impact IT offices.</p>
+
+        <h2>The Mandate for Rigid Conduit</h2>
+
+        <p>The moment an environment transitions from a carpeted office to exposed-deck architecture, industrial warehousing, or high-traffic distribution, open cabling becomes an active liability.</p>
+
+        <p>Exposed CAT6 bundles hanging along warehouse girders are vulnerable to forklift strikes, dust accumulation, thermal stress near HVAC returns, and electromagnetic interference (EMI) from heavy industrial machinery. In these environments, rigid EMT conduit represents absolute physical containment. Furthermore, local fire and electrical codes in densely populated cities like New York and Chicago frequently mandate conduit for all low-voltage and security wiring passing through non-plenum walls or core structural decks to strictly compartmentalize fire hazards.</p>
+
+        <p>We dictate EMT conduit usage primarily for high-density backbone runs (such as tying a third-floor IDF closet down to a basement MDF), for all exterior surveillance runs subjected to weathering, and for all low-voltage lines running parallel to heavy electrical feeders where EMI shielding is critical to data throughput.</p>
+
+        <h2>Hybrid Execution Frameworks</h2>
+
+        <p>The most competent deployment strategy is a hybrid infrastructure design. This involves building out a primary rigid containment track (such as continuous cable trays or 3-inch EMT sleeves) down the central coring spine of the building, and subsequently exploding that protected bundle into open-air J-hooks once it breaches the localized ceiling space of a specific office suite.</p>
+
+        <p>This ensures the most vulnerable core segments of the building network are thoroughly physically protected, while the endpoint distribution remains agile, cost-effective, and highly serviceable for future structural changes.</p>
+
+        <div class="author-box">
+            <div class="author-info">
+                <h4>NTW Deployment Logistics Command</h4>
+                <p>Northeast Technical Works utilizes deep logistics and structural awareness to engineer cost-effective, code-compliant physical deployment pathways.</p>
+            </div>
+        </div>
+    </article>
+
+    <script src="/js/main.js"></script>
+    <footer class="footer" style="background: #020617; padding: 100px 0 40px; border-top: 1px solid #1e293b;">
         <div class="container">
             <div class="footer-top">
                 <div style="max-width: 400px;">
@@ -96,57 +263,6 @@ const footerBlockRoot = `    <footer class="footer" style="background: #020617; 
                 </div>
             </div>
         </div>
-    </footer>`;
-
-function processFile(filePath) {
-    let content = fs.readFileSync(filePath, 'utf8');
-    let modified = false;
-    
-    // Replace all duplicate Top Bars and NavBars in one pass
-    // This regex matches any number of top-bar and navbar components at the start of body
-    const headerBlockRegex = /(?:<!--.*?-->\s*)?(?:<div class="top-bar">[\s\S]*?<\/div>|<nav class="navbar">[\s\S]*?<\/nav>|<header class="navbar">[\s\S]*?<\/header>)\s*/g;
-    
-    if (headerBlockRegex.test(content)) {
-        // First, strip all existing header-related blocks
-        content = content.replace(headerBlockRegex, '');
-        // Then, insert the master navBlockRoot after the opening <body> tag
-        content = content.replace(/(<body[^>]*>)/i, '$1\n' + navBlockRoot);
-        modified = true;
-    }
-    
-    // Replace Footer
-    // Flexible regex to match the footer regardless of inline styles or spacing
-    const footerRegex = /<footer\b[^>]*class=["']footer["'][^>]*>[\s\S]*?<\/footer>/;
-    
-    if (footerRegex.test(content)) {
-        content = content.replace(footerRegex, footerBlockRoot);
-        modified = true;
-    } else {
-        // Footer is completely missing. Insert it before the main.js script tag or before </body>
-        if (content.includes('<script src="js/main.js"')) {
-            content = content.replace(/(<script src="js\/main\.js")/, footerBlockRoot + '\n    $1');
-        } else {
-            content = content.replace(/(<\/body>)/, footerBlockRoot + '\n$1');
-        }
-        modified = true;
-    }
-    
-    if (modified) {
-        fs.writeFileSync(filePath, content, 'utf8');
-        console.log('Updated ' + filePath);
-    }
-}
-
-function processDirectory(dir) {
-    const files = fs.readdirSync(dir);
-    for (const file of files) {
-        const fullPath = path.join(dir, file);
-        if (fs.statSync(fullPath).isDirectory()) {
-            if (file === 'services' || file === 'blog') processDirectory(fullPath);
-        } else if (fullPath.endsWith('.html')) {
-            processFile(fullPath);
-        }
-    }
-}
-
-processDirectory(rootDir);
+    </footer>
+</body>
+</html>
