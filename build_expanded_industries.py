@@ -352,11 +352,17 @@ deck_wrapper = f'''
 with open(ind_path, "r", encoding="utf-8") as f:
     html_content = f.read()
 
-# Replace the existing deck wrapper
-html_content = re.sub(r'<div class="sticky-deck-wrapper">.*?</nav>\s*</div>\s*</div>\s*</div>\s*</div>\s*</div>\s*</div>\s*</div>\s*</div>\s*<footer', deck_wrapper + '\n<footer', html_content, flags=re.DOTALL)
-# The previous regex generated a lot of `</div>` because the wrapper regex matched inside. 
-# A cleaner way is scanning.
-html_content = html_content[:html_content.find('<div class="sticky-deck-wrapper">')] + deck_wrapper + '\n' + html_content[html_content.find('<footer class="footer">'):]
+# Carefully inject deck wrapper
+start_idx = html_content.find('<section class="section bg-white">')
+if start_idx == -1:
+    start_idx = html_content.find('<div class="sticky-deck-wrapper">')
+
+end_idx = html_content.find('<script src="/js/main.js">')
+if end_idx == -1:
+    end_idx = html_content.find('<footer class="footer"')
+
+html_content = html_content[:start_idx] + deck_wrapper + '\n' + html_content[end_idx:]
+
 
 with open(ind_path, "w", encoding="utf-8") as f:
     f.write(html_content)

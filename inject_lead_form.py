@@ -164,7 +164,7 @@ with open(ind_path, "r", encoding="utf-8") as f:
 
 # Insert right before the footer
 if "<!-- Lead Generation Block -->" not in html_content:
-    html_content = html_content.replace('<footer class="footer">', form_html + '\n<footer class="footer">')
+    html_content = re.sub(r'(<footer class="footer")', form_html + r'\n\1', html_content)
     
     with open(ind_path, "w", encoding="utf-8") as f:
         f.write(html_content)

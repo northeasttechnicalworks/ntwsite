@@ -44,10 +44,10 @@ if ".timeline-wrapper" not in css_content:
 with open(os.path.join(base_dir, "index.html"), "r", encoding="utf-8") as f:
     idx_content = f.read()
 
-nav_match = re.search(r'(<div class="top-bar">.*?</nav>)', idx_content, re.DOTALL)
+nav_match = re.search(r'(<div class="top-bar">.*?</header>)', idx_content, re.DOTALL)
 new_nav = nav_match.group(1) if nav_match else ""
 
-ft_match = re.search(r'(<footer class="footer">.*?</footer>)', idx_content, re.DOTALL)
+ft_match = re.search(r'(<footer class="footer".*?</footer>)', idx_content, re.DOTALL)
 new_footer = ft_match.group(1) if ft_match else ""
 
 
@@ -335,7 +335,7 @@ for index, (title, desc, graphic, icon) in enumerate(SERVICES_DATA):
     elif title == "Network Infrastructure": link = "/services/network-rack-buildouts.html"
     
     timeline_html += f'''
-        <div class="timeline-step">
+        <div class="timeline-step reveal">
             <div class="timeline-content">
                 <div class="svc-icon-wrap" style="width: 48px; height: 48px; margin-bottom: 24px; border-radius: 12px; background: rgba(90, 103, 216, 0.1); color: var(--c-accent); border: 1px solid rgba(90, 103, 216, 0.2);">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">{icon}</svg>
