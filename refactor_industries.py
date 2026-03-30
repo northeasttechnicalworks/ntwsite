@@ -168,7 +168,7 @@ for idx, ind in enumerate(new_industries):
                         <h2 style="font-size:36px; margin-bottom:16px;">{ind['title']}</h2>
                         <p style="font-size:16px; line-height:1.6; color:var(--c-text-body); margin-bottom:24px;">{ind['intro']}</p>
                         
-                        <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:24px;">
+                        <div class="grid grid-2" style="margin-bottom:24px; align-items:start;">
                             <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.05); padding:20px; border-radius:12px;">
                                 <h4 style="color:#F87171; font-size:15px; margin-bottom:12px; font-family:var(--font-heading);">Common Problems:</h4>
                                 <ul style="list-style:none; padding:0; margin:0; font-size:13px; color:#cbd5e1;">
