@@ -67,20 +67,34 @@
         </div>
     </header>
 
-    <!-- 3. Hero Section -->
+    <!-- Hero Section -->
     <section class="hero theme-dark" style="min-height: 35vh; padding-top: 100px; padding-bottom: 50px;">
         <div class="container relative">
             <div class="hero-content">
-                <div class="hero-tag" style="margin-bottom: 20px;">What We Do</div>
-                <h1 style="font-size: 52px; line-height: 1.2; margin-bottom: 16px;">Infrastructure Services</h1>
-                <p style="font-size: 18px; color: var(--c-dark-text-body); max-width: 700px;">Comprehensive physical execution across 6 core disciplines. Highly visual, animated technology pipelines tracking precise deployment operations.</p>
+                <h1 style="font-size: 52px; line-height: 1.2; margin-bottom: 16px;">Infrastructure Execution That Gets Done Right the First Time</h1>
+                <p style="font-size: 18px; color: var(--c-dark-text-body); max-width: 700px; margin-bottom: 32px;">Structured cabling, security systems, and network infrastructure installed cleanly, correctly, and ready for inspection.</p>
+                <div style="display: flex; gap: 16px;">
+                    <a href="/contact.html" class="btn btn-primary" style="padding: 16px 32px;">Request Deployment</a>
+                    <a href="#capabilities" class="btn btn-dark" style="padding: 16px 32px;">View Capabilities</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- 4. Main Body Content Graphic Timeline -->
-    <section class="section bg-white" style="position: relative; overflow: hidden; padding-bottom: 200px;">
+    <section class="section bg-white">
         <div class="container">
+            <!-- Built for High-Stakes Deployments -->
+            <div style="max-width: 800px; margin: 0 auto 100px; text-align: center;">
+                <h2 style="font-size: 40px; margin-bottom: 24px; font-family: var(--font-heading); color: var(--c-text-main);">Built for High-Stakes Deployments</h2>
+                <p style="font-size: 20px; color: var(--c-text-body); line-height: 1.8;">We’re brought in when the job needs to be done right. Complex environments, tight timelines, and strict standards — that’s where we operate best.</p>
+                <p style="font-size: 20px; color: var(--c-text-body); line-height: 1.8; margin-top: 24px;">We follow scope, stick to schedule, and deliver clean, inspection-ready work without creating downstream issues.</p>
+            </div>
+
+            <div style="text-align: center; margin-bottom: 40px;" id="capabilities">
+                <h2 style="font-size: 32px; font-family: var(--font-heading);">Our Core Services</h2>
+            </div>
+
+            <!-- Main Timeline -->
 
     <div class="timeline-wrapper">
         <div class="timeline-tracker" id="timeline-tracker">
@@ -92,8 +106,8 @@
                 <div class="svc-icon-wrap" style="width: 48px; height: 48px; margin-bottom: 24px; border-radius: 12px; background: rgba(90, 103, 216, 0.1); color: var(--c-accent); border: 1px solid rgba(90, 103, 216, 0.2);">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">polyline points='22 12 18 12 15 21 9 3 6 12 2 12'</svg>
                 </div>
-                <h3 style="font-size: 32px; margin-bottom: 16px;">Structured Cabling & Routing</h3>
-                <p style="font-size: 18px; color: var(--c-text-body); line-height: 1.7; margin-bottom: 24px;">Execute structured cabling systems that support enterprise connectivity and security endpoints. Our teams deliver immaculate cable dressing, strict labeling standards, and certified test results.</p>
+                <h3 style="font-size: 32px; margin-bottom: 16px;">Structured Cabling Systems</h3>
+                <p style="font-size: 18px; color: var(--c-text-body); line-height: 1.7; margin-bottom: 24px;">Installation of fiber and copper cabling systems with clean routing, labeling, and full testing to ensure long-term reliability.</p>
                 <a href="/services/structured-cabling.html" class="btn btn-primary" style="font-size: 14px; padding: 10px 24px;">Explore Capability</a>
             </div>
             
@@ -109,36 +123,21 @@
       <stop offset="100%" stop-color="#5A67D8" stop-opacity="0" />
     </linearGradient>
   </defs>
-  <!-- Background Grid -->
   <path d="M0 100 L400 100 M0 200 L400 200 M100 0 L100 300 M200 0 L200 300 M300 0 L300 300" stroke="rgba(255,255,255,0.03)" stroke-width="1" />
-  
-  <!-- Server Racks -->
   <rect x="40" y="60" width="60" height="180" rx="4" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.2)" stroke-width="2" />
   <rect x="300" y="60" width="60" height="180" rx="4" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.2)" stroke-width="2" />
-
-  <!-- Cables -->
   <path id="path1" d="M100 100 C 150 100, 250 150, 300 150" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="4" stroke-linecap="round"/>
   <path id="path2" d="M100 150 C 180 150, 220 100, 300 100" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="4" stroke-linecap="round"/>
   <path id="path3" d="M100 200 C 200 200, 200 200, 300 200" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="4" stroke-linecap="round"/>
-
-  <!-- Flowing Packets -->
   <circle r="4" fill="#5A67D8">
-    <animateMotion dur="2.5s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1">
-      <mpath href="#path1" />
-    </animateMotion>
+    <animateMotion dur="2.5s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1"><mpath href="#path1" /></animateMotion>
   </circle>
   <circle r="4" fill="#60A5FA">
-    <animateMotion dur="3s" repeatCount="indefinite" begin="1s" keyPoints="0;1" keyTimes="0;1">
-      <mpath href="#path2" />
-    </animateMotion>
+    <animateMotion dur="3s" repeatCount="indefinite" begin="1s" keyPoints="0;1" keyTimes="0;1"><mpath href="#path2" /></animateMotion>
   </circle>
   <circle r="4" fill="#5A67D8">
-    <animateMotion dur="2s" repeatCount="indefinite" begin="0.5s" keyPoints="0;1" keyTimes="0;1">
-      <mpath href="#path3" />
-    </animateMotion>
+    <animateMotion dur="2s" repeatCount="indefinite" begin="0.5s" keyPoints="0;1" keyTimes="0;1"><mpath href="#path3" /></animateMotion>
   </circle>
-
-  <!-- Ports -->
   <circle cx="100" cy="100" r="4" fill="#4B5563" />
   <circle cx="100" cy="150" r="4" fill="#4B5563" />
   <circle cx="100" cy="200" r="4" fill="#4B5563" />
@@ -155,8 +154,8 @@
                 <div class="svc-icon-wrap" style="width: 48px; height: 48px; margin-bottom: 24px; border-radius: 12px; background: rgba(90, 103, 216, 0.1); color: var(--c-accent); border: 1px solid rgba(90, 103, 216, 0.2);">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">rect x='2' y='4' width='20' height='16' rx='2' ry='2'/><path d='M12 16v-4'/><path d='M8 12h8'/></svg>
                 </div>
-                <h3 style="font-size: 32px; margin-bottom: 16px;">Video Surveillance</h3>
-                <p style="font-size: 18px; color: var(--c-text-body); line-height: 1.7; margin-bottom: 24px;">High-density IP camera mounting, precise FOV adjustments, and multi-server VMS storage architecture deployment.</p>
+                <h3 style="font-size: 32px; margin-bottom: 16px;">Surveillance & Security Systems</h3>
+                <p style="font-size: 18px; color: var(--c-text-body); line-height: 1.7; margin-bottom: 24px;">Camera installations with proper placement, coverage planning, and integration into your existing or new VMS platforms.</p>
                 <a href="/services/video-surveillance-installation.html" class="btn btn-primary" style="font-size: 14px; padding: 10px 24px;">Explore Capability</a>
             </div>
             
@@ -174,13 +173,8 @@
       <path d="M200 60 L60 250 A 180 30 0 0 0 340 250 Z" />
     </clipPath>
   </defs>
-
   <path d="M0 100 L400 100 M0 200 L400 200 M100 0 L100 300 M200 0 L200 300 M300 0 L300 300" stroke="rgba(255,255,255,0.03)" stroke-width="1" />
-
-  <!-- Base View Cone -->
   <path d="M200 60 L60 250 A 180 30 0 0 0 340 250 Z" fill="rgba(255,255,255,0.02)" />
-
-  <!-- Animated Sensor Sweep -->
   <g clip-path="url(#coneClip)">
     <g transform="translate(200 60)">
       <polygon points="0,0 -80,220 80,220" fill="url(#radarGrad)">
@@ -188,16 +182,12 @@
       </polygon>
     </g>
   </g>
-
-  <!-- Identified targets (squares) -->
   <rect x="120" y="180" width="20" height="20" rx="4" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2">
     <animate attributeName="stroke" values="rgba(255,255,255,0.3); #4ade80; rgba(255,255,255,0.3)" dur="6s" repeatCount="indefinite" />
   </rect>
   <rect x="260" y="210" width="20" height="20" rx="4" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2">
     <animate attributeName="stroke" values="rgba(255,255,255,0.3); #4ade80; rgba(255,255,255,0.3)" begin="2s" dur="6s" repeatCount="indefinite" />
   </rect>
-
-  <!-- Dome Camera -->
   <circle cx="200" cy="50" r="16" fill="rgba(255,255,255,0.8)" />
   <path d="M184 50 A 16 16 0 0 0 216 50 Z" fill="#111827" />
   <circle cx="200" cy="58" r="4" fill="#DC2626">
@@ -214,8 +204,8 @@
                 <div class="svc-icon-wrap" style="width: 48px; height: 48px; margin-bottom: 24px; border-radius: 12px; background: rgba(90, 103, 216, 0.1); color: var(--c-accent); border: 1px solid rgba(90, 103, 216, 0.2);">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">path d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'</svg>
                 </div>
-                <h3 style="font-size: 32px; margin-bottom: 16px;">Access Control</h3>
-                <p style="font-size: 18px; color: var(--c-text-body); line-height: 1.7; margin-bottom: 24px;">Total physical barrier mapping and implementation. Deploying OSDP readers, logic panels, and complex door hardware systems.</p>
+                <h3 style="font-size: 32px; margin-bottom: 16px;">Access Control Systems</h3>
+                <p style="font-size: 18px; color: var(--c-text-body); line-height: 1.7; margin-bottom: 24px;">Installation of access control hardware including readers, panels, locks, and full system integration.</p>
                 <a href="/services/access-control-installation.html" class="btn btn-primary" style="font-size: 14px; padding: 10px 24px;">Explore Capability</a>
             </div>
             
@@ -225,28 +215,17 @@
                 
 <svg viewBox="0 0 400 300" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
   <path d="M0 100 L400 100 M0 200 L400 200 M100 0 L100 300 M200 0 L200 300 M300 0 L300 300" stroke="rgba(255,255,255,0.03)" stroke-width="1" />
-  
-  <!-- Reader Backplate -->
   <rect x="150" y="80" width="100" height="140" rx="12" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)" stroke-width="2" />
   <rect x="170" y="100" width="60" height="60" rx="8" fill="rgba(255,255,255,0.1)" />
-  
-  <!-- Status LED -->
   <circle cx="200" cy="180" r="8" fill="#111827" stroke="rgba(255,255,255,0.2)" stroke-width="2">
     <animate attributeName="fill" values="#111827; #111827; #4ade80; #111827; #111827" keyTimes="0; 0.4; 0.5; 0.8; 1" dur="4s" repeatCount="indefinite" />
-    <animate attributeName="stroke" values="rgba(255,255,255,0.2); rgba(255,255,255,0.2); #4ade80; rgba(255,255,255,0.2); rgba(255,255,255,0.2)" keyTimes="0; 0.4; 0.5; 0.8; 1" dur="4s" repeatCount="indefinite" />
   </circle>
-
-  <!-- Animated Swipe Card -->
   <g>
     <animateTransform attributeName="transform" type="translate" values="50 0; -10 0; -10 0; 50 0" keyTimes="0; 0.4; 0.8; 1" dur="4s" repeatCount="indefinite" />
     <animate attributeName="opacity" values="0; 1; 1; 0" keyTimes="0; 0.4; 0.8; 1" dur="4s" repeatCount="indefinite" />
     <rect x="230" y="110" width="60" height="40" rx="4" fill="#5A67D8" transform="rotate(-15 260 130)" />
     <rect x="235" y="125" width="20" height="15" rx="2" fill="rgba(255,255,255,0.5)" transform="rotate(-15 260 130)" />
-    <line x1="260" y1="125" x2="280" y2="125" stroke="rgba(255,255,255,0.5)" stroke-width="2" transform="rotate(-15 260 130)" />
-    <line x1="260" y1="135" x2="275" y2="135" stroke="rgba(255,255,255,0.5)" stroke-width="2" transform="rotate(-15 260 130)" />
   </g>
-
-  <!-- Unlock Ripples -->
   <circle cx="200" cy="130" r="10" fill="none" stroke="#4ade80" stroke-width="2" opacity="0">
     <animate attributeName="r" values="10; 80" keyTimes="0; 1" begin="1.6s" dur="1s" repeatCount="indefinite" />
     <animate attributeName="opacity" values="0; 0.8; 0" keyTimes="0; 0.1; 1" begin="1.6s" dur="1s" repeatCount="indefinite" />
@@ -259,56 +238,10 @@
         <div class="timeline-step reveal">
             <div class="timeline-content">
                 <div class="svc-icon-wrap" style="width: 48px; height: 48px; margin-bottom: 24px; border-radius: 12px; background: rgba(90, 103, 216, 0.1); color: var(--c-accent); border: 1px solid rgba(90, 103, 216, 0.2);">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">path d='M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9'/><path d='M13.73 21a2 2 0 0 1-3.46 0'/></svg>
-                </div>
-                <h3 style="font-size: 32px; margin-bottom: 16px;">Intrusion Systems</h3>
-                <p style="font-size: 18px; color: var(--c-text-body); line-height: 1.7; margin-bottom: 24px;">Perimeter defense and interior volumetric threat detection arrays. We install the sensors that secure operational footprints.</p>
-                <a href="/contact.html" class="btn btn-primary" style="font-size: 14px; padding: 10px 24px;">Explore Capability</a>
-            </div>
-            
-            <div class="timeline-dot"></div>
-            
-            <div class="timeline-graphic reveal">
-                
-<svg viewBox="0 0 400 300" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-  <path d="M0 100 L400 100 M0 200 L400 200 M100 0 L100 300 M200 0 L200 300 M300 0 L300 300" stroke="rgba(255,255,255,0.03)" stroke-width="1" />
-  
-  <g transform="translate(200, 150)">
-    <!-- Expanding Radar Pulses -->
-    <circle cx="0" cy="0" r="0" fill="none" stroke="#5A67D8" stroke-width="2">
-      <animate attributeName="r" values="0; 150" dur="3s" repeatCount="indefinite" />
-      <animate attributeName="opacity" values="1; 0" dur="3s" repeatCount="indefinite" />
-    </circle>
-    <circle cx="0" cy="0" r="0" fill="none" stroke="#5A67D8" stroke-width="2">
-      <animate attributeName="r" values="0; 150" begin="1s" dur="3s" repeatCount="indefinite" />
-      <animate attributeName="opacity" values="1; 0" begin="1s" dur="3s" repeatCount="indefinite" />
-    </circle>
-    <circle cx="0" cy="0" r="0" fill="none" stroke="#5A67D8" stroke-width="2">
-      <animate attributeName="r" values="0; 150" begin="2s" dur="3s" repeatCount="indefinite" />
-      <animate attributeName="opacity" values="1; 0" begin="2s" dur="3s" repeatCount="indefinite" />
-    </circle>
-
-    <!-- Node Center -->
-    <circle cx="0" cy="0" r="16" fill="rgba(255,255,255,0.1)" stroke="#5A67D8" stroke-width="4" />
-    <circle cx="0" cy="0" r="6" fill="#F87171">
-      <animate attributeName="opacity" values="1; 0.2; 1" dur="1s" repeatCount="indefinite" />
-    </circle>
-    
-    <!-- Floor plan boundary -->
-    <rect x="-100" y="-80" width="200" height="160" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2" stroke-dasharray="8 8" />
-  </g>
-</svg>
-
-            </div>
-        </div>
-
-        <div class="timeline-step reveal">
-            <div class="timeline-content">
-                <div class="svc-icon-wrap" style="width: 48px; height: 48px; margin-bottom: 24px; border-radius: 12px; background: rgba(90, 103, 216, 0.1); color: var(--c-accent); border: 1px solid rgba(90, 103, 216, 0.2);">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">rect x='4' y='4' width='16' height='16' rx='2' ry='2'/><rect x='9' y='9' width='6' height='6'/><line x1='9' y1='1' x2='9' y2='4'/><line x1='15' y1='1' x2='15' y2='4'/><line x1='9' y1='20' x2='9' y2='23'/><line x1='15' y1='20' x2='15' y2='23'/><line x1='20' y1='9' x2='23' y2='9'/><line x1='20' y1='14' x2='23' y2='14'/><line x1='1' y1='9' x2='4' y2='9'/><line x1='1' y1='14' x2='4' y2='14'/></svg>
                 </div>
                 <h3 style="font-size: 32px; margin-bottom: 16px;">Network Infrastructure</h3>
-                <p style="font-size: 18px; color: var(--c-text-body); line-height: 1.7; margin-bottom: 24px;">Clean, precise buildouts of the core networking environments. We prepare the physical stage for IT engineers to activate.</p>
+                <p style="font-size: 18px; color: var(--c-text-body); line-height: 1.7; margin-bottom: 24px;">Rack buildouts, switch installation, UPS setup, and complete MDF/IDF environments built clean and organized.</p>
                 <a href="/services/network-rack-buildouts.html" class="btn btn-primary" style="font-size: 14px; padding: 10px 24px;">Explore Capability</a>
             </div>
             
@@ -318,52 +251,47 @@
                 
 <svg viewBox="0 0 400 300" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
   <path d="M0 100 L400 100 M0 200 L400 200 M100 0 L100 300 M200 0 L200 300 M300 0 L300 300" stroke="rgba(255,255,255,0.03)" stroke-width="1" />
-  
   <rect x="120" y="40" width="160" height="220" rx="4" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.2)" stroke-width="2" />
-  
-  <!-- Server Unit 1 -->
+  <!-- Server Unit -->
   <rect x="130" y="60" width="140" height="30" rx="4" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)" />
-  <circle cx="145" cy="75" r="4" fill="#4ade80">
-      <animate attributeName="opacity" values="1;0;1" dur="0.8s" repeatCount="indefinite" />
-  </circle>
-  <rect x="160" y="70" width="10" height="10" fill="#111827" />
-  <rect x="180" y="70" width="10" height="10" fill="#111827" />
-  <rect x="200" y="70" width="10" height="10" fill="#111827" />
-  <rect x="220" y="70" width="10" height="10" fill="#111827" />
-  <circle cx="260" cy="75" r="3" fill="#60A5FA">
-      <animate attributeName="opacity" values="1;0;1" dur="2s" repeatCount="indefinite" />
-  </circle>
-
-  <!-- Server Unit 2 / Switch -->
+  <circle cx="145" cy="75" r="4" fill="#4ade80"><animate attributeName="opacity" values="1;0;1" dur="0.8s" repeatCount="indefinite" /></circle>
+  <rect x="160" y="70" width="10" height="10" fill="#111827" /><rect x="180" y="70" width="10" height="10" fill="#111827" />
+  <!-- Switch -->
   <rect x="130" y="100" width="140" height="40" rx="4" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)" />
-  <g fill="#111827">
-    <rect x="140" y="110" width="8" height="8" /><rect x="152" y="110" width="8" height="8" />
-    <rect x="164" y="110" width="8" height="8" /><rect x="176" y="110" width="8" height="8" />
-    <rect x="188" y="110" width="8" height="8" /><rect x="200" y="110" width="8" height="8" />
-    <rect x="212" y="110" width="8" height="8" /><rect x="224" y="110" width="8" height="8" />
-    <rect x="140" y="122" width="8" height="8" /><rect x="152" y="122" width="8" height="8" />
-    <rect x="164" y="122" width="8" height="8" /><rect x="176" y="122" width="8" height="8" />
-    <rect x="188" y="122" width="8" height="8" /><rect x="200" y="122" width="8" height="8" />
-    <rect x="212" y="122" width="8" height="8" /><rect x="224" y="122" width="8" height="8" />
-  </g>
-  <!-- Port LEDs -->
+  <g fill="#111827"><rect x="140" y="110" width="8" height="8" /><rect x="152" y="110" width="8" height="8" /></g>
   <rect x="142" y="112" width="4" height="4" fill="#4ade80"><animate attributeName="opacity" values="1;0;1" dur="0.2s" repeatCount="indefinite" /></rect>
-  <rect x="178" y="112" width="4" height="4" fill="#4ade80"><animate attributeName="opacity" values="1;0;1" dur="0.3s" repeatCount="indefinite" /></rect>
-  <rect x="202" y="124" width="4" height="4" fill="#4ade80"><animate attributeName="opacity" values="1;0;1" dur="0.5s" repeatCount="indefinite" /></rect>
-  <rect x="226" y="112" width="4" height="4" fill="#4ade80"><animate attributeName="opacity" values="1;0;1" dur="0.4s" repeatCount="indefinite" /></rect>
-
-  <!-- Server Unit 3 -->
-  <rect x="130" y="150" width="140" height="30" rx="4" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)" />
-  <circle cx="145" cy="165" r="4" fill="#4ade80">
-      <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite" />
-  </circle>
-  <rect x="160" y="160" width="10" height="10" fill="#111827" />
-  <rect x="180" y="160" width="10" height="10" fill="#111827" />
-  
-  <!-- UPS Unit -->
+  <!-- UPS -->
   <rect x="130" y="200" width="140" height="50" rx="4" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.1)" />
-  <rect x="145" y="210" width="30" height="30" rx="15" fill="#111827" stroke="rgba(255,255,255,0.1)" />
-  <path d="M155 225 L160 225 L160 220 L165 220 M155 225 L155 230 L150 230" stroke="#5A67D8" stroke-width="2" fill="none" />
+  <path d="M155 225 L160 225 L160 220 L165 220" stroke="#5A67D8" stroke-width="2" fill="none" />
+</svg>
+
+            </div>
+        </div>
+
+        <div class="timeline-step reveal">
+            <div class="timeline-content">
+                <div class="svc-icon-wrap" style="width: 48px; height: 48px; margin-bottom: 24px; border-radius: 12px; background: rgba(90, 103, 216, 0.1); color: var(--c-accent); border: 1px solid rgba(90, 103, 216, 0.2);">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">path d='M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9'/><path d='M13.73 21a2 2 0 0 1-3.46 0'/></svg>
+                </div>
+                <h3 style="font-size: 32px; margin-bottom: 16px;">Intrusion Detection Systems</h3>
+                <p style="font-size: 18px; color: var(--c-text-body); line-height: 1.7; margin-bottom: 24px;">Installation of alarm systems, sensors, and monitoring integrations for full perimeter protection.</p>
+                <a href="/services/intrusion-detection.html" class="btn btn-primary" style="font-size: 14px; padding: 10px 24px;">Explore Capability</a>
+            </div>
+            
+            <div class="timeline-dot"></div>
+            
+            <div class="timeline-graphic reveal">
+                
+<svg viewBox="0 0 400 300" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <path d="M0 100 L400 100 M0 200 L400 200 M100 0 L100 300 M200 0 L200 300 M300 0 L300 300" stroke="rgba(255,255,255,0.03)" stroke-width="1" />
+  <g transform="translate(200, 150)">
+    <circle cx="0" cy="0" r="0" fill="none" stroke="#5A67D8" stroke-width="2">
+      <animate attributeName="r" values="0; 150" dur="3s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="1; 0" dur="3s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="0" cy="0" r="16" fill="rgba(255,255,255,0.1)" stroke="#5A67D8" stroke-width="4" />
+    <circle cx="0" cy="0" r="6" fill="#F87171"><animate attributeName="opacity" values="1; 0.2; 1" dur="1s" repeatCount="indefinite" /></circle>
+  </g>
 </svg>
 
             </div>
@@ -374,9 +302,9 @@
                 <div class="svc-icon-wrap" style="width: 48px; height: 48px; margin-bottom: 24px; border-radius: 12px; background: rgba(90, 103, 216, 0.1); color: var(--c-accent); border: 1px solid rgba(90, 103, 216, 0.2);">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">rect x='2' y='3' width='20' height='14' rx='2' ry='2'/><line x1='8' y1='21' x2='16' y2='21'/><line x1='12' y1='17' x2='12' y2='21'/></svg>
                 </div>
-                <h3 style="font-size: 32px; margin-bottom: 16px;">Technology Rollouts</h3>
-                <p style="font-size: 18px; color: var(--c-text-body); line-height: 1.7; margin-bottom: 24px;">Scalable deployment solutions for regional footprints. We map identical, repeatable installation protocols across hundreds of locations simultaneously.</p>
-                <a href="/contact.html" class="btn btn-primary" style="font-size: 14px; padding: 10px 24px;">Explore Capability</a>
+                <h3 style="font-size: 32px; margin-bottom: 16px;">Multi-Site Rollouts</h3>
+                <p style="font-size: 18px; color: var(--c-text-body); line-height: 1.7; margin-bottom: 24px;">Coordinated deployments across multiple locations with consistent execution and standardized results.</p>
+                <a href="/services/multi-site-rollouts.html" class="btn btn-primary" style="font-size: 14px; padding: 10px 24px;">Explore Capability</a>
             </div>
             
             <div class="timeline-dot"></div>
@@ -386,55 +314,188 @@
 <svg viewBox="0 0 400 300" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
   <path d="M0 100 L400 100 M0 200 L400 200 M100 0 L100 300 M200 0 L200 300 M300 0 L300 300" stroke="rgba(255,255,255,0.03)" stroke-width="1" />
   
-  <g transform="translate(40, 60)">
-    <!-- Branching Network Links -->
-    <path d="M40 90 L120 40 L200 90 L280 40 L200 140 Z M120 40 L120 140 M200 90 L280 140" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2" />
-    
-    <!-- Nodes -->
-    <g>
-      <!-- Node 1 -->
-      <circle cx="40" cy="90" r="10" fill="#111827" stroke="rgba(255,255,255,0.2)" stroke-width="2">
-        <animate attributeName="fill" values="#111827; #5A67D8; #5A67D8; #111827" keyTimes="0; 0.1; 0.9; 1" dur="5s" repeatCount="indefinite" />
-        <animate attributeName="stroke" values="rgba(255,255,255,0.2); #fff; #fff; rgba(255,255,255,0.2)" keyTimes="0; 0.1; 0.9; 1" dur="5s" repeatCount="indefinite" />
-      </circle>
-      
-      <!-- Node 2 -->
-      <circle cx="120" cy="40" r="12" fill="#111827" stroke="rgba(255,255,255,0.2)" stroke-width="2">
-        <animate attributeName="fill" values="#111827; #5A67D8; #5A67D8; #111827" keyTimes="0; 0.1; 0.9; 1" begin="0.5s" dur="5s" repeatCount="indefinite" />
-        <animate attributeName="stroke" values="rgba(255,255,255,0.2); #fff; #fff; rgba(255,255,255,0.2)" keyTimes="0; 0.1; 0.9; 1" begin="0.5s" dur="5s" repeatCount="indefinite" />
-      </circle>
-      
-      <!-- Node 3 -->
-      <circle cx="120" cy="140" r="10" fill="#111827" stroke="rgba(255,255,255,0.2)" stroke-width="2">
-        <animate attributeName="fill" values="#111827; #5A67D8; #5A67D8; #111827" keyTimes="0; 0.1; 0.9; 1" begin="1s" dur="5s" repeatCount="indefinite" />
-        <animate attributeName="stroke" values="rgba(255,255,255,0.2); #fff; #fff; rgba(255,255,255,0.2)" keyTimes="0; 0.1; 0.9; 1" begin="1s" dur="5s" repeatCount="indefinite" />
-      </circle>
+  <!-- Central Hub -->
+  <circle cx="200" cy="150" r="24" fill="rgba(90, 103, 216, 0.2)" stroke="#5A67D8" stroke-width="2" />
+  <circle cx="200" cy="150" r="8" fill="#5A67D8" />
 
-      <!-- Node 4 -->
-      <circle cx="200" cy="90" r="16" fill="#111827" stroke="rgba(255,255,255,0.2)" stroke-width="2">
-        <animate attributeName="fill" values="#111827; #5A67D8; #5A67D8; #111827" keyTimes="0; 0.1; 0.9; 1" begin="1.5s" dur="5s" repeatCount="indefinite" />
-        <animate attributeName="stroke" values="rgba(255,255,255,0.2); #fff; #fff; rgba(255,255,255,0.2)" keyTimes="0; 0.1; 0.9; 1" begin="1.5s" dur="5s" repeatCount="indefinite" />
-      </circle>
-
-      <!-- Node 5 -->
-      <circle cx="280" cy="40" r="10" fill="#111827" stroke="rgba(255,255,255,0.2)" stroke-width="2">
-        <animate attributeName="fill" values="#111827; #5A67D8; #5A67D8; #111827" keyTimes="0; 0.1; 0.9; 1" begin="2s" dur="5s" repeatCount="indefinite" />
-        <animate attributeName="stroke" values="rgba(255,255,255,0.2); #fff; #fff; rgba(255,255,255,0.2)" keyTimes="0; 0.1; 0.9; 1" begin="2s" dur="5s" repeatCount="indefinite" />
-      </circle>
-
-      <!-- Node 6 -->
-      <circle cx="280" cy="140" r="14" fill="#111827" stroke="rgba(255,255,255,0.2)" stroke-width="2">
-        <animate attributeName="fill" values="#111827; #5A67D8; #5A67D8; #111827" keyTimes="0; 0.1; 0.9; 1" begin="2.5s" dur="5s" repeatCount="indefinite" />
-        <animate attributeName="stroke" values="rgba(255,255,255,0.2); #fff; #fff; rgba(255,255,255,0.2)" keyTimes="0; 0.1; 0.9; 1" begin="2.5s" dur="5s" repeatCount="indefinite" />
-      </circle>
-    </g>
+  <!-- Spokes to sites -->
+  <g stroke="rgba(255,255,255,0.1)" stroke-width="2">
+    <line x1="200" y1="150" x2="80" y2="80" />
+    <line x1="200" y1="150" x2="320" y2="80" />
+    <line x1="200" y1="150" x2="100" y2="240" />
+    <line x1="200" y1="150" x2="300" y2="240" />
   </g>
+
+  <!-- Pulses from Hub -->
+  <circle r="4" fill="#4ade80"><animateMotion dur="2s" repeatCount="indefinite" path="M 200 150 L 80 80" /></circle>
+  <circle r="4" fill="#4ade80"><animateMotion dur="2s" repeatCount="indefinite" path="M 200 150 L 320 80" begin="0.5s" /></circle>
+  <circle r="4" fill="#4ade80"><animateMotion dur="2s" repeatCount="indefinite" path="M 200 150 L 100 240" begin="1s" /></circle>
+  <circle r="4" fill="#4ade80"><animateMotion dur="2s" repeatCount="indefinite" path="M 200 150 L 300 240" begin="1.5s" /></circle>
+
+  <!-- Satellite Sites -->
+  <rect x="65" y="65" width="30" height="30" rx="4" fill="#111827" stroke="rgba(255,255,255,0.2)" stroke-width="2">
+    <animate attributeName="stroke" values="rgba(255,255,255,0.2); #4ade80; rgba(255,255,255,0.2)" begin="1.8s" dur="2s" repeatCount="indefinite" />
+  </rect>
+  <rect x="305" y="65" width="30" height="30" rx="4" fill="#111827" stroke="rgba(255,255,255,0.2)" stroke-width="2">
+    <animate attributeName="stroke" values="rgba(255,255,255,0.2); #4ade80; rgba(255,255,255,0.2)" begin="2.3s" dur="2s" repeatCount="indefinite" />
+  </rect>
+  <rect x="85" y="225" width="30" height="30" rx="4" fill="#111827" stroke="rgba(255,255,255,0.2)" stroke-width="2">
+    <animate attributeName="stroke" values="rgba(255,255,255,0.2); #4ade80; rgba(255,255,255,0.2)" begin="2.8s" dur="2s" repeatCount="indefinite" />
+  </rect>
+  <rect x="285" y="225" width="30" height="30" rx="4" fill="#111827" stroke="rgba(255,255,255,0.2)" stroke-width="2">
+    <animate attributeName="stroke" values="rgba(255,255,255,0.2); #4ade80; rgba(255,255,255,0.2)" begin="3.3s" dur="2s" repeatCount="indefinite" />
+  </rect>
+</svg>
+
+            </div>
+        </div>
+
+        <div class="timeline-step reveal">
+            <div class="timeline-content">
+                <div class="svc-icon-wrap" style="width: 48px; height: 48px; margin-bottom: 24px; border-radius: 12px; background: rgba(90, 103, 216, 0.1); color: var(--c-accent); border: 1px solid rgba(90, 103, 216, 0.2);">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">path d='M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 9.36l-7.1 7.1a2.12 2.12 0 0 1-3-3l7.1-7.1a6 6 0 0 1 9.36-7.94z'</svg>
+                </div>
+                <h3 style="font-size: 32px; margin-bottom: 16px;">Maintenance & Repair</h3>
+                <p style="font-size: 18px; color: var(--c-text-body); line-height: 1.7; margin-bottom: 24px;">Troubleshooting, remediation, and upgrades of existing infrastructure that wasn’t installed properly or has degraded over time.</p>
+                <a href="/services/infrastructure-remediation.html" class="btn btn-primary" style="font-size: 14px; padding: 10px 24px;">Explore Capability</a>
+            </div>
+            
+            <div class="timeline-dot"></div>
+            
+            <div class="timeline-graphic reveal">
+                
+<svg viewBox="0 0 400 300" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <path d="M0 100 L400 100 M0 200 L400 200 M100 0 L100 300 M200 0 L200 300 M300 0 L300 300" stroke="rgba(255,255,255,0.03)" stroke-width="1" />
+  
+  <!-- Server Unit Block -->
+  <rect x="120" y="80" width="160" height="140" rx="8" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.1)" stroke-width="2" />
+  
+  <!-- Failing Slot -->
+  <rect x="140" y="100" width="120" height="20" rx="2" fill="rgba(255,255,255,0.05)" />
+  <circle cx="155" cy="110" r="4" fill="#4B5563">
+    <animate attributeName="fill" values="#4B5563; #F87171; #4B5563; #4ade80; #4ade80" keyTimes="0; 0.2; 0.4; 0.6; 1" dur="4s" repeatCount="indefinite" />
+  </circle>
+  
+  <!-- Working Slots -->
+  <rect x="140" y="140" width="120" height="20" rx="2" fill="rgba(255,255,255,0.05)" />
+  <circle cx="155" cy="150" r="4" fill="#4ade80" />
+  
+  <rect x="140" y="180" width="120" height="20" rx="2" fill="rgba(255,255,255,0.05)" />
+  <circle cx="155" cy="190" r="4" fill="#4ade80" />
+
+  <!-- Diagnostic Scan Line -->
+  <line x1="110" y1="80" x2="290" y2="80" stroke="#5A67D8" stroke-width="3" opacity="0">
+    <animate attributeName="y1" values="80; 230; 80" dur="4s" repeatCount="indefinite" />
+    <animate attributeName="y2" values="80; 230; 80" dur="4s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0; 0.8; 0; 0" keyTimes="0; 0.3; 0.6; 1" dur="4s" repeatCount="indefinite" />
+  </line>
+</svg>
+
+            </div>
+        </div>
+
+        <div class="timeline-step reveal">
+            <div class="timeline-content">
+                <div class="svc-icon-wrap" style="width: 48px; height: 48px; margin-bottom: 24px; border-radius: 12px; background: rgba(90, 103, 216, 0.1); color: var(--c-accent); border: 1px solid rgba(90, 103, 216, 0.2);">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">path d='M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z'/><circle cx='12' cy='10' r='3'</svg>
+                </div>
+                <h3 style="font-size: 32px; margin-bottom: 16px;">Field Services & Dispatch</h3>
+                <p style="font-size: 18px; color: var(--c-text-body); line-height: 1.7; margin-bottom: 24px;">On-demand technician dispatch for installs, troubleshooting, and project support.</p>
+                <a href="/services/field-services-dispatch.html" class="btn btn-primary" style="font-size: 14px; padding: 10px 24px;">Explore Capability</a>
+            </div>
+            
+            <div class="timeline-dot"></div>
+            
+            <div class="timeline-graphic reveal">
+                
+<svg viewBox="0 0 400 300" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <path d="M 50 150 C 100 200, 200 50, 350 100" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="6" stroke-linecap="round" />
+  <path d="M 100 50 C 150 150, 250 250, 300 200" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="6" stroke-linecap="round" />
+  <path d="M 50 250 C 150 250, 250 100, 350 250" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="6" stroke-linecap="round" />
+
+  <polygon points="175,175 200,140 225,175" fill="rgba(90, 103, 216, 0.2)" stroke="#5A67D8" stroke-width="2" />
+  
+  <!-- Emergency Zone Pulses -->
+  <circle cx="350" cy="100" r="12" fill="none" stroke="#F87171" stroke-width="2">
+    <animate attributeName="r" values="6; 20" dur="2s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="1; 0" dur="2s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="100" cy="50" r="12" fill="none" stroke="#F87171" stroke-width="2">
+    <animate attributeName="r" values="6; 20" dur="2s" repeatCount="indefinite" begin="0.8s" />
+    <animate attributeName="opacity" values="1; 0" dur="2s" repeatCount="indefinite" begin="0.8s" />
+  </circle>
+
+  <!-- Ground Units Deploying -->
+  <circle r="6" fill="#4ade80">
+    <animateMotion dur="4s" repeatCount="indefinite" path="M 200 150 L 350 100" />
+    <animate attributeName="opacity" values="1; 1; 0" keyTimes="0; 0.8; 1" dur="4s" repeatCount="indefinite" />
+  </circle>
+  <circle r="6" fill="#4ade80">
+    <animateMotion dur="4s" repeatCount="indefinite" path="M 200 150 L 100 50" begin="2s" />
+    <animate attributeName="opacity" values="1; 1; 0" keyTimes="0; 0.8; 1" dur="4s" repeatCount="indefinite" begin="2s" />
+  </circle>
+  <circle r="6" fill="#4ade80">
+    <animateMotion dur="4s" repeatCount="indefinite" path="M 200 150 L 300 200" begin="1s" />
+    <animate attributeName="opacity" values="1; 1; 0" keyTimes="0; 0.8; 1" dur="4s" repeatCount="indefinite" begin="1s" />
+  </circle>
 </svg>
 
             </div>
         </div>
 
     </div>
+
+
+            <!-- What You Can Expect -->
+            <div style="background: var(--c-surface-light); border: 1px solid var(--c-border-light); padding: 80px 60px; border-radius: 16px; margin: 100px 0;">
+                <h2 style="font-size: 32px; margin-bottom: 40px; font-family: var(--font-heading); text-align: center;">What You Can Expect Working With Us</h2>
+                <div class="grid grid-3" style="column-gap: 40px; row-gap: 32px; max-width: 900px; margin: 0 auto;">
+                    <div style="display: flex; align-items: flex-start; gap: 16px;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--c-accent)" stroke-width="2" style="flex-shrink: 0; margin-top: 2px;"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span style="font-size: 18px; font-weight: 500;">Clean, organized installs</span>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; gap: 16px;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--c-accent)" stroke-width="2" style="flex-shrink: 0; margin-top: 2px;"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span style="font-size: 18px; font-weight: 500;">Work completed to spec</span>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; gap: 16px;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--c-accent)" stroke-width="2" style="flex-shrink: 0; margin-top: 2px;"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span style="font-size: 18px; font-weight: 500;">Clear communication</span>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; gap: 16px;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--c-accent)" stroke-width="2" style="flex-shrink: 0; margin-top: 2px;"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span style="font-size: 18px; font-weight: 500;">On-time execution</span>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; gap: 16px;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--c-accent)" stroke-width="2" style="flex-shrink: 0; margin-top: 2px;"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span style="font-size: 18px; font-weight: 500;">Proper documentation and closeout</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Why Clients Bring Us In -->
+            <div style="max-width: 800px; margin: 0 auto 100px; text-align: center;">
+                <h2 style="font-size: 32px; margin-bottom: 24px; font-family: var(--font-heading); color: var(--c-text-main);">Why Clients Bring Us In</h2>
+                <p style="font-size: 20px; color: var(--c-text-body); line-height: 1.8;">Most issues in infrastructure projects come from poor execution in the field. We eliminate that risk by delivering consistent, disciplined work that holds up under inspection and long-term use.</p>
+            </div>
+
+             <!-- Testimonial -->
+             <div style="margin-bottom: 100px; background: var(--c-surface-dark); padding: 60px; border-radius: 16px; position: relative;">
+                <div style="position: absolute; top: 40px; left: 40px; opacity: 0.1;">
+                     <svg width="80" height="80" viewBox="0 0 24 24" fill="currentColor"><path d="M10 11h-4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2z"></path><path d="M22 11h-4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2z"></path></svg>
+                </div>
+                <p style="font-size: 24px; color: #fff; line-height: 1.6; font-style: italic; max-width: 800px; margin: 0 auto; text-align: center; position: relative; z-index: 2;">“NTW came in on a job that had already gone sideways and got everything back on track. Easy to work with and got it done right.”</p>
+                <div style="text-align: center; margin-top: 24px; position: relative; z-index: 2;">
+                    <strong style="color: var(--c-accent); font-size: 16px; letter-spacing: 1px;">— Systems Integrator, NY</strong>
+                </div>
+             </div>
+
+            <!-- CTA -->
+            <div style="text-align: center; margin-bottom: 100px;">
+                <h2 style="font-size: 40px; margin-bottom: 16px; font-family: var(--font-heading); color: var(--c-text-main);">Need a Team That Gets It Done Right?</h2>
+                <p style="font-size: 20px; color: var(--c-text-body); max-width: 600px; margin: 0 auto 40px;">Send us your scope or project details — we’ll take it from there.</p>
+                <a href="/contact.html" class="btn btn-primary" style="padding: 16px 48px; font-size: 18px;">Talk to Dispatch</a>
+            </div>
 
         </div>
     </section>
