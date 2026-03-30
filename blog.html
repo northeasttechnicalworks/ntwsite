@@ -138,6 +138,31 @@
             box-shadow: 0 20px 40px rgba(0,0,0,0.1);
             border-color: var(--blog-gold);
         }
+        
+        .filter-btn {
+            background: transparent;
+            border: 1px solid var(--blog-border);
+            color: var(--blog-text-muted);
+            padding: 8px 16px;
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 40px;
+        }
+        
+        .filter-btn:hover {
+            border-color: var(--blog-text);
+            color: var(--blog-text);
+        }
+        
+        .filter-btn.active {
+            background: var(--blog-gold);
+            border-color: var(--blog-gold);
+            color: #fff;
+        }
 
         .article-card-img {
             width: 100%;
@@ -269,7 +294,7 @@
 
     <!-- 3. Blog Hero -->
     <section class="blog-hero" style="background: #020617; position: relative; padding: 160px 0; overflow: hidden;">
-        <div style="position: absolute; inset: 0; background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc4b?auto=format&fit=crop&w=1600&q=80'); background-size: cover; background-position: center; opacity: 0.3; filter: grayscale(100%);"></div>
+        <div style="position: absolute; inset: 0; background-image: url('/images/blog/hero_technicians.png'); background-size: cover; background-position: center; opacity: 0.35; filter: grayscale(80%);"></div>
         <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(2,6,23,0.8), rgba(2,6,23,0.95));"></div>
         
         <div class="container" style="position: relative; z-index: 2; text-align: center;">
@@ -298,7 +323,7 @@
                 
                 <a href="/blog/conduit-vs-open-cabling.html" style="text-decoration: none; display: block;" onmouseover="this.querySelector('img').style.transform='scale(1.05)'" onmouseout="this.querySelector('img').style.transform='scale(1)'">
                     <div style="height: 410px; overflow: hidden; border-radius: 4px; border: 1px solid var(--blog-border); margin-bottom: 32px; position: relative; background: #eee;">
-                        <img src="images/blog/conduit.png" alt="Cabling Architectures" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);">
+                        <img src="/images/blog/conduit.png" alt="Cabling Architectures" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);">
                         <div style="position: absolute; top: 20px; left: 20px; background: #fff; padding: 6px 14px; font-size: 11px; font-weight: 900; letter-spacing: 2.5px; text-transform: uppercase; color: #111; border: 1px solid #e2e8f0;">Efficiency</div>
                     </div>
                     <h3 style="font-family: var(--font-heading); font-size: 36px; font-weight: 900; color: #111111; line-height: 1.1; margin-bottom: 16px; letter-spacing: -1.5px;">Conduit vs Open Cabling: When Each Approach Makes Sense</h3>
@@ -311,12 +336,24 @@
     <!-- 5. Article Grid Section -->
     <section class="article-grid-section" style="background: #F5F5F3; padding: 120px 0;">
         <div class="container">
-            <h3 style="font-family: var(--font-heading); font-size: 14px; text-transform: uppercase; letter-spacing: 4px; color: #111111; margin-bottom: 60px; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 24px;">Field Archives</h3>
+            <div style="display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 24px; margin-bottom: 60px; flex-wrap: wrap; gap: 24px;">
+                <h3 style="font-family: var(--font-heading); font-size: 14px; text-transform: uppercase; letter-spacing: 4px; color: #111111; margin: 0;">Field Archives</h3>
+                <div class="category-filters" style="display: flex; gap: 12px; flex-wrap: wrap;">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="Access Control">Access Control</button>
+                    <button class="filter-btn" data-filter="Cabling">Cabling</button>
+                    <button class="filter-btn" data-filter="Operations">Operations</button>
+                    <button class="filter-btn" data-filter="Infrastructure">Infrastructure</button>
+                    <button class="filter-btn" data-filter="Protocol">Protocol</button>
+                    <button class="filter-btn" data-filter="Standard">Standard</button>
+                    <button class="filter-btn" data-filter="Surveillance">Surveillance</button>
+                </div>
+            </div>
             
             <div class="grid-4">
                 
                 <a href="/blog/access-control-deployments.html" class="article-card">
-                    <img src="images/blog/thumb_security.png" class="article-card-img" alt="Access Control Systems">
+                    <img src="/images/blog/thumb_security.png" class="article-card-img" alt="Access Control Systems">
                     <div class="article-card-content">
                         <span class="category-tag">Access Control</span>
                         <h3 class="article-card-title">Access Control Systems: What Actually Matters in Real-World Deployments</h3>
@@ -328,7 +365,7 @@
                 </a>
 
                 <a href="/blog/conduit-vs-open-cabling.html" class="article-card">
-                    <img src="images/blog/conduit.png" class="article-card-img" alt="Cabling Pathways">
+                    <img src="/images/blog/conduit.png" class="article-card-img" alt="Cabling Pathways">
                     <div class="article-card-content">
                         <span class="category-tag">Cabling</span>
                         <h3 class="article-card-title">Conduit vs Open Cabling: When Each Approach Makes Sense</h3>
@@ -340,7 +377,7 @@
                 </a>
 
                 <a href="/blog/multi-site-rollouts.html" class="article-card">
-                    <img src="images/blog/thumb_operations.png" class="article-card-img" alt="Multi-Site Rollout Strategy">
+                    <img src="/images/blog/thumb_operations.png" class="article-card-img" alt="Multi-Site Rollout Strategy">
                     <div class="article-card-content">
                         <span class="category-tag">Operations</span>
                         <h3 class="article-card-title">How Multi-Site Rollouts Fail — And How to Execute Them Properly</h3>
@@ -352,7 +389,7 @@
                 </a>
 
                 <a href="/blog/preventive-maintenance-cost.html" class="article-card">
-                    <img src="images/blog/maintenance.png" class="article-card-img" alt="Infrastructure Maintenance">
+                    <img src="/images/blog/maintenance.png" class="article-card-img" alt="Infrastructure Maintenance">
                     <div class="article-card-content">
                         <span class="category-tag">Operations</span>
                         <h3 class="article-card-title">Preventive Infrastructure Maintenance vs Emergency Repairs: A Cost Breakdown</h3>
@@ -364,7 +401,7 @@
                 </a>
 
                 <a href="/blog/zero-downtime-mdf-cutover.html" class="article-card">
-                    <img src="images/blog/cutover.png" class="article-card-img" alt="MDF Cutover">
+                    <img src="/images/blog/cutover.png" class="article-card-img" alt="MDF Cutover">
                     <div class="article-card-content">
                         <span class="category-tag">Infrastructure</span>
                         <h3 class="article-card-title">Executing a Zero-Downtime MDF Cutover for a 12-Story Manhattan Tower</h3>
@@ -376,7 +413,7 @@
                 </a>
 
                 <a href="/blog/osdp-standardization.html" class="article-card">
-                    <img src="images/blog/osdp.png" class="article-card-img" alt="OSDP Protocols">
+                    <img src="/images/blog/osdp.png" class="article-card-img" alt="OSDP Protocols">
                     <div class="article-card-content">
                         <span class="category-tag">Protocol</span>
                         <h3 class="article-card-title">Why OSDP is Now Mandatory for Real Estate Access Deployments</h3>
@@ -388,7 +425,7 @@
                 </a>
 
                 <a href="/blog/certifying-fluke-networks.html" class="article-card">
-                    <img src="images/blog/fluke.png" class="article-card-img" alt="Fluke Network Testing">
+                    <img src="/images/blog/fluke.png" class="article-card-img" alt="Fluke Network Testing">
                     <div class="article-card-content">
                         <span class="category-tag">Standard</span>
                         <h3 class="article-card-title">The Cost of Uncertified Drops: Why We Fluke-Test Every Run</h3>
@@ -400,7 +437,7 @@
                 </a>
 
                 <a href="/blog/warehouse-surveillance-deployment.html" class="article-card">
-                    <img src="images/blog/warehouse.png" class="article-card-img" alt="Warehouse Surveillance">
+                    <img src="/images/blog/warehouse.png" class="article-card-img" alt="Warehouse Surveillance">
                     <div class="article-card-content">
                         <span class="category-tag">Surveillance</span>
                         <h3 class="article-card-title">Warehouse Surveillance Deployment for a Regional Distribution Center</h3>
@@ -412,7 +449,7 @@
                 </a>
 
                 <a href="/blog/office-infrastructure-buildout.html" class="article-card">
-                    <img src="images/blog/office.png" class="article-card-img" alt="Office Infrastructure">
+                    <img src="/images/blog/office.png" class="article-card-img" alt="Office Infrastructure">
                     <div class="article-card-content">
                         <span class="category-tag">Infrastructure</span>
                         <h3 class="article-card-title">Office Infrastructure Buildout for a Commercial Tenant Space</h3>
@@ -424,7 +461,7 @@
                 </a>
 
                 <a href="/blog/multi-site-cabling-rollout.html" class="article-card">
-                    <img src="images/blog/retail.png" class="article-card-img" alt="Multi-Site Cabling">
+                    <img src="/images/blog/retail.png" class="article-card-img" alt="Multi-Site Cabling">
                     <div class="article-card-content">
                         <span class="category-tag">Operations</span>
                         <h3 class="article-card-title">Multi-Site Cabling Rollout for a Regional Retail Chain</h3>
@@ -436,7 +473,7 @@
                 </a>
 
                 <a href="/blog/access-control-installation.html" class="article-card">
-                    <img src="images/blog/logic_panel.png" class="article-card-img" alt="Access Control Hardware">
+                    <img src="/images/blog/logic_panel.png" class="article-card-img" alt="Access Control Hardware">
                     <div class="article-card-content">
                         <span class="category-tag">Access Control</span>
                         <h3 class="article-card-title">Access Control Installation for a Secured Commercial Facility</h3>
@@ -545,5 +582,37 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const articleCards = document.querySelectorAll('.grid-4 .article-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active from all
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    // Add active to clicked
+                    btn.classList.add('active');
+
+                    const filterValue = btn.getAttribute('data-filter');
+
+                    articleCards.forEach(card => {
+                        const category = card.querySelector('.category-tag').textContent.trim();
+                        // Reset inline display first for pure toggle
+                        card.style.transition = 'opacity 0.3s ease, transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease';
+
+                        if (filterValue === 'all' || category === filterValue) {
+                            card.style.display = 'flex';
+                            setTimeout(() => { card.style.opacity = '1'; }, 10);
+                        } else {
+                            card.style.opacity = '0';
+                            setTimeout(() => { card.style.display = 'none'; }, 300);
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>
