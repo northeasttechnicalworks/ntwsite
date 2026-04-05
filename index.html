@@ -511,46 +511,46 @@
                     <h3
                         style="color: #fff; font-size: 32px; font-family: var(--font-heading); margin-bottom: 40px; letter-spacing: -0.5px;">
                         Initiate Your Deployment</h3>
-                    <form class="premium-form">
+                    <form class="premium-form" action="https://formsubmit.co/solutions@northeasttechworks.com" method="POST">
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px;">
                             <div class="form-group-p">
                                 <label>First Name</label>
-                                <input type="text" required>
+                                <input type="text" name="first_name" required>
                             </div>
                             <div class="form-group-p">
                                 <label>Last Name</label>
-                                <input type="text" required>
+                                <input type="text" name="last_name" required>
                             </div>
                         </div>
                         <div class="form-group-p" style="margin-bottom: 24px;">
                             <label>Company Name</label>
-                            <input type="text" required>
+                            <input type="text" name="company" required>
                         </div>
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px;">
                             <div class="form-group-p">
                                 <label>Work Email</label>
-                                <input type="email" required>
+                                <input type="email" name="email" required>
                             </div>
                             <div class="form-group-p">
                                 <label>Phone Number</label>
-                                <input type="tel">
+                                <input type="tel" name="phone">
                             </div>
                         </div>
                         <div class="form-group-p" style="margin-bottom: 32px;">
                             <label>Project Type</label>
-                            <select required>
+                            <select name="project_type" required>
                                 <option value="" disabled selected>Select execution vertical</option>
-                                <option>Cabling</option>
-                                <option>Surveillance</option>
-                                <option>Access Control</option>
-                                <option>Network Infrastructure</option>
-                                <option>Multi-Site Rollout</option>
-                                <option>Other</option>
+                                <option value="Cabling">Cabling</option>
+                                <option value="Surveillance">Surveillance</option>
+                                <option value="Access Control">Access Control</option>
+                                <option value="Network Infrastructure">Network Infrastructure</option>
+                                <option value="Multi-Site Rollout">Multi-Site Rollout</option>
+                                <option value="Other">Other</option>
                             </select>
                         </div>
                         <div class="form-group-p" style="margin-bottom: 40px;">
                             <label>Project Details</label>
-                            <textarea rows="2" required></textarea>
+                            <textarea name="details" rows="2" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary"
                             style="width: 100%; padding: 20px; font-size: 15px; background: #fff; color: #020617; text-transform: uppercase; letter-spacing: 1.5px; border-radius: 4px; border: none; font-weight: 800; cursor: pointer; transition: background 0.2s;"

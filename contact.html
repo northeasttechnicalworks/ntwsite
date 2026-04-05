@@ -87,30 +87,32 @@
         <!-- Left Side: Form -->
         <div style="flex: 1; min-width: 400px; padding: 60px; background: var(--c-white);">
             <h2 style="font-size: 32px; margin-bottom: 32px; font-family: var(--font-heading); color: var(--c-text-main);">Send a Message</h2>
-            <div class="grid grid-2" style="gap: 24px; margin-bottom: 24px;">
-                <div style="display:flex; flex-direction:column; gap:8px;">
-                    <label style="font-size:14px; font-weight:600; color:var(--c-text-main);">Name</label>
-                    <input type="text" placeholder="Your name" style="padding:14px; border:1px solid var(--c-border-light); border-radius:8px; outline:none; background:#F8FAFC;">
+            <form action="https://formsubmit.co/solutions@northeasttechworks.com" method="POST">
+                <div class="grid grid-2" style="gap: 24px; margin-bottom: 24px;">
+                    <div style="display:flex; flex-direction:column; gap:8px;">
+                        <label style="font-size:14px; font-weight:600; color:var(--c-text-main);">Name</label>
+                        <input type="text" name="name" placeholder="Your name" style="padding:14px; border:1px solid var(--c-border-light); border-radius:8px; outline:none; background:#F8FAFC;" required>
+                    </div>
+                    <div style="display:flex; flex-direction:column; gap:8px;">
+                        <label style="font-size:14px; font-weight:600; color:var(--c-text-main);">Email</label>
+                        <input type="email" name="email" placeholder="Your email" style="padding:14px; border:1px solid var(--c-border-light); border-radius:8px; outline:none; background:#F8FAFC;" required>
+                    </div>
                 </div>
-                <div style="display:flex; flex-direction:column; gap:8px;">
-                    <label style="font-size:14px; font-weight:600; color:var(--c-text-main);">Email</label>
-                    <input type="email" placeholder="Your email" style="padding:14px; border:1px solid var(--c-border-light); border-radius:8px; outline:none; background:#F8FAFC;">
+                <div style="display:flex; flex-direction:column; gap:8px; margin-bottom: 24px;">
+                    <label style="font-size:14px; font-weight:600; color:var(--c-text-main);">Select Service</label>
+                    <select name="service" style="padding:14px; border:1px solid var(--c-border-light); border-radius:8px; outline:none; background:#F8FAFC; color:var(--c-text-body);" required>
+                        <option value="" disabled selected>Select service</option>
+                        <option value="Structured Cabling">Structured Cabling</option>
+                        <option value="Video Surveillance">Video Surveillance</option>
+                        <option value="Access Control">Access Control</option>
+                    </select>
                 </div>
-            </div>
-            <div style="display:flex; flex-direction:column; gap:8px; margin-bottom: 24px;">
-                <label style="font-size:14px; font-weight:600; color:var(--c-text-main);">Select Service</label>
-                <select style="padding:14px; border:1px solid var(--c-border-light); border-radius:8px; outline:none; background:#F8FAFC; color:var(--c-text-body);">
-                    <option>Select service</option>
-                    <option>Structured Cabling</option>
-                    <option>Video Surveillance</option>
-                    <option>Access Control</option>
-                </select>
-            </div>
-            <div style="display:flex; flex-direction:column; gap:8px; margin-bottom: 32px;">
-                <label style="font-size:14px; font-weight:600; color:var(--c-text-main);">Message</label>
-                <textarea rows="5" placeholder="Describe your deployment needs..." style="padding:14px; border:1px solid var(--c-border-light); border-radius:8px; outline:none; background:#F8FAFC; resize:vertical;"></textarea>
-            </div>
-            <button class="btn btn-primary" style="width: 100%; border: none; cursor: pointer; text-align: center; justify-content: center;">Submit Request</button>
+                <div style="display:flex; flex-direction:column; gap:8px; margin-bottom: 32px;">
+                    <label style="font-size:14px; font-weight:600; color:var(--c-text-main);">Message</label>
+                    <textarea name="message" rows="5" placeholder="Describe your deployment needs..." style="padding:14px; border:1px solid var(--c-border-light); border-radius:8px; outline:none; background:#F8FAFC; resize:vertical;" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; border: none; cursor: pointer; text-align: center; justify-content: center;">Submit Request</button>
+            </form>
         </div>
         
         <!-- Right Side: Info -->
