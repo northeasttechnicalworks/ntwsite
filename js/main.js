@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initMotionObserver();
     initHeroTopology();
     initTimelinePhysics();
+    initForms();
 
     // Mobile Menu Toggle
     const menuBtn = document.querySelector('.mobile-menu-btn');
@@ -211,6 +212,94 @@ function initTimelinePhysics() {
                 step.classList.add('is-active');
             } else {
                 step.classList.remove('is-active');
+            }
+        });
+    });
+}
+
+/**
+ * Global Form Handler
+ * Intercepts FormSubmit requests to send via AJAX and display in-place acknowledgement.
+ */
+function initForms() {
+    const forms = document.querySelectorAll('form[action*="formsubmit.co"]');
+    forms.forEach(form => {
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn ? submitBtn.innerText : 'Submit';
+            if (submitBtn) {
+                submitBtn.innerText = 'Transmitting...';
+                submitBtn.disabled = true;
+                submitBtn.style.opacity = '0.7';
+                submitBtn.style.cursor = 'not-allowed';
+            }
+
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+            
+            // Appending FormSubmit configuration fields silently
+            data['_captcha'] = 'false';
+            data['_template'] = 'table';
+            data['_subject'] = 'Deployment Initiation | NTW Website';
+
+            let actionUrl = form.action;
+            if (!actionUrl.includes('/ajax/')) {
+                actionUrl = actionUrl.replace('formsubmit.co/', 'formsubmit.co/ajax/');
+            }
+
+            try {
+                const response = await fetch(actionUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    const isDarkTheme = form.closest('.theme-dark') !== null || !!form.closest('[style*="background: #0f172a"]');
+                    const textColor = isDarkTheme ? '#ffffff' : '#0f172a';
+                    const pColor = isDarkTheme ? '#94a3b8' : '#475569';
+                    
+                    const successMsg = document.createElement('div');
+                    successMsg.style.textAlign = 'center';
+                    successMsg.style.padding = '40px 20px';
+                    successMsg.style.animation = 'fadeIn 0.5s ease forwards';
+                    
+                    if (!document.getElementById('ntw-form-styles')) {
+                        const style = document.createElement('style');
+                        style.id = 'ntw-form-styles';
+                        style.textContent = '@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }';
+                        document.head.appendChild(style);
+                    }
+
+                    successMsg.innerHTML = `
+                        <div style="width: 64px; height: 64px; background: rgba(16, 185, 129, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; border: 1px solid rgba(16, 185, 129, 0.2);">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                        </div>
+                        <h3 style="font-family: var(--font-heading, sans-serif); font-size: 28px; margin-bottom: 12px; color: ${textColor}; letter-spacing: -0.5px;">Transmission Successful</h3>
+                        <p style="font-size: 16px; line-height: 1.6; color: ${pColor}; max-width: 400px; margin: 0 auto;">Your deployment requirements have been securely logged. An execution specialist will review your specifications and contact you shortly.</p>
+                    `;
+                    
+                    form.replaceWith(successMsg);
+                } else {
+                    throw new Error('Server returned ' + response.status);
+                }
+            } catch (err) {
+                console.error('Form submission error:', err);
+                alert('We encountered a temporary network issue. Please call us at (203) 418-1608 or email solutions@northeasttechworks.com directly.');
+                if (submitBtn) {
+                    submitBtn.innerText = originalBtnText;
+                    submitBtn.disabled = false;
+                    submitBtn.style.opacity = '1';
+                    submitBtn.style.cursor = 'pointer';
+                }
             }
         });
     });
